@@ -1,0 +1,11 @@
+4.5,-0.5,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092224\2Tone4Qubit_NR_20240922_2336.mat
+4.5,-0.4,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092024\2Tone4Qubit_NR_20240920_1402.mat
+4.5,-0.3,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092024\2Tone4Qubit_NR_20240920_1426.mat
+4.5,-0.2,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092024\2Tone4Qubit_NR_20240920_1449.mat
+4.5,-0.1,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092024\2Tone4Qubit_NR_20240920_1522.mat
+4.5,0.0,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax092124\2Tone4Qubit_NR_20240921_1203.mat
+4.5,0.08,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax100424\2Tone5Qubit_Tri_20241004_1233.mat
+4.5,0.18,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax100424\2Tone5Qubit_Tri_20241004_1358.mat
+4.5,0.28,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax100424\2Tone5Qubit_Tri_20241004_1450.mat
+4.5,0.38,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax100424\2Tone5Qubit_Tri_20241004_1536.mat
+4.5,0.48,V:\QSimMeasurements\Measurements\5QV1_Triangle_Lattice\pnax100724\2Tone5Qubit_Tri_20241007_1026.mat
