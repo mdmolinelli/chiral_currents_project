@@ -18,7 +18,7 @@ class CurrentMeasurementSimulation:
         :param time_offset: Time offset to apply to the first set of readout indices in units of number of samples. Defaults to 0.
                             positive time offset means that the first readout pair beamsplitter time is earlier than the second readout pair beamsplitter time.
                 '''
-        
+
         self.print_logs = print_logs
         
         self.num_qubits = num_qubits
@@ -138,10 +138,9 @@ class CurrentMeasurementSimulation:
 
         self.initialize_operators()
 
-        self.annihilation_operators = create_annihilation_operators(num_levels, num_qubits)
-        self.initial_Hamiltonian = generate_triangle_lattice_Hamiltonian(self.annihilation_operators, self.J, self.J_parallel, self.U, self.initial_detunings)
+        self.initial_Hamiltonian = self.generate_triangle_lattice_Hamiltonian(self.annihilation_operators, self.J, self.J_parallel, self.U, self.initial_detunings, initial=True)
 
-        self.measurement_Hamiltonian = generate_triangle_lattice_Hamiltonian(self.annihilation_operators, self.measurement_J, self.measurement_J_parallel, self.U, self.measurement_detuning)
+        self.measurement_Hamiltonian = self.generate_triangle_lattice_Hamiltonian(self.annihilation_operators, self.measurement_J, self.measurement_J_parallel, self.U, self.measurement_detuning)
 
         uncoupled_J = [0] * (self.num_qubits - 1)
         uncoupled_J_parallel = [0] * (self.num_qubits - 2)
@@ -157,7 +156,7 @@ class CurrentMeasurementSimulation:
             elif abs(i - j) == 2:
                 uncoupled_J_parallel[min(i, j)] = self.measurement_J_parallel[min(i, j)]
 
-        self.uncoupled_Hamiltonian = generate_triangle_lattice_Hamiltonian(self.annihilation_operators, uncoupled_J, uncoupled_J_parallel, self.U, 0)
+        self.uncoupled_Hamiltonian = self.generate_triangle_lattice_Hamiltonian(self.annihilation_operators, uncoupled_J, uncoupled_J_parallel, self.U, 0)
 
 
         if psi0 is None:
@@ -165,20 +164,22 @@ class CurrentMeasurementSimulation:
             if len(eigenstates) > 0:
                 psi0 = eigenstates[-1]
 
+
+        print(f'processing psi0, given type: {type(psi0)}')
         if isinstance(psi0, qt.Qobj):
             self.psi0 = psi0
-        elif isinstance(psi0, str):
-            if psi0 == 'highest_single_particle':
-                particle_number = 1
-                eigenstates = self.get_eigenstates(particle_number)
-                if len(eigenstates) > 0:
-                    self.psi0 = eigenstates[-1]
+
+            if self.print_logs:
+                print(f'given psi0 nonzero elements')
+                print(self.psi0.full()[np.where(self.psi0.full() != 0)])
+
+
         elif isinstance(psi0, int):
             eigenstates = self.get_eigenstates(self.num_particles)
             if -len(eigenstates) <= psi0 < len(eigenstates):
                 self.psi0 = eigenstates[psi0]
         else:
-            raise TypeError(f"psi0 must be a Qobj or a string, given {type(psi0)}.")
+            raise TypeError(f"psi0 must be a Qobj or int, given {type(psi0)}.")
 
         # print(f'setting psi0 to: {self.psi0}')
         # print('initial state populations:')
@@ -193,6 +194,8 @@ class CurrentMeasurementSimulation:
             
             if self.psi0.isoper:
                 print('psi0 is a density matrix')
+
+        
 
 
     def initialize_operators(self):
@@ -218,10 +221,12 @@ class CurrentMeasurementSimulation:
             coupling = self.convert_index_pair_to_coupling(index_1, index_2)
 
 
-            self.current_operators.append(-1j*coupling*(a_i.dag() * a_j - a_j.dag() * a_i))
+            self.current_operators.append(1j*coupling*(a_i.dag() * a_j - a_j.dag() * a_i))
 
         self.current_correlator = self.current_operators[0] * self.current_operators[1]
 
+    def generate_triangle_lattice_Hamiltonian(self, annihilation_operators, J, J_parallel, U, detunings=None, initial=False):
+        return generate_triangle_lattice_Hamiltonian(annihilation_operators, J, J_parallel, U, detunings=detunings)
 
     def convert_index_pair_to_coupling(self, index_1, index_2):
         """
@@ -232,14 +237,14 @@ class CurrentMeasurementSimulation:
         elif abs(index_1 - index_2) == 2:
             return self.J_parallel[min(index_1, index_2)]
         else:
-            raise ValueError(f"Invalid index pair: {index_1}, {index_2}. Indices must be separated by 1 or 2.")    
+            return 0
 
     def get_particle_number_to_eigenenergy_dict(self):
         """
         Get the particle number to eigenenergy mapping.
         """
         if self.particle_number_to_eigenenergy is None:
-            self.particle_number_to_eigenenergy, self.particle_number_to_eigenstate = get_eigenstates_and_energies(self.initial_Hamiltonian, self.annihilation_operators)
+            self.particle_number_to_eigenenergy, self.particle_number_to_eigenstate = get_eigenstates_and_energies(self.initial_Hamiltonian, self.number_operators)
         return self.particle_number_to_eigenenergy
     
     def get_particle_number_to_eigenstate_dict(self):
@@ -247,7 +252,7 @@ class CurrentMeasurementSimulation:
         Get the particle number to eigenstate mapping.
         """
         if self.particle_number_to_eigenstate is None:
-            self.particle_number_to_eigenenergy, self.particle_number_to_eigenstate = get_eigenstates_and_energies(self.initial_Hamiltonian, self.annihilation_operators)
+            self.particle_number_to_eigenenergy, self.particle_number_to_eigenstate = get_eigenstates_and_energies(self.initial_Hamiltonian, self.number_operators)
         return self.particle_number_to_eigenstate
 
     def get_eigenstates(self, particle_number):
@@ -272,6 +277,9 @@ class CurrentMeasurementSimulation:
         if self.simulation_result is None:
             self.run_simulation()
         return self.simulation_result
+    
+    def clear_simulation_result(self):
+        self.simulation_result = None
     
     def get_states(self):
         """
@@ -487,6 +495,12 @@ class CurrentMeasurementSimulation:
         if self.print_logs:
             print(f'running simulation')
 
+            if self.psi0.isket:
+                print('psi0 is a state vector')
+            
+            if self.psi0.isoper:
+                print('psi0 is a density matrix')
+
         if np.all(self.gamma_1 == 0) and np.all(self.gamma_phi == 0) and not self.psi0.isoper:
             if self.print_logs:
                 print(f'running sesolve')
@@ -495,7 +509,7 @@ class CurrentMeasurementSimulation:
             if self.print_logs:
                 print(f'running mesolve')
             c_ops = [np.sqrt(gamma) * op for gamma, op in zip(self.gamma_1, self.annihilation_operators)]
-            c_ops += [np.sqrt(gamma) * op.dag()*op for gamma, op in zip(self.gamma_phi, self.annihilation_operators)]
+            c_ops += [np.sqrt(gamma) * op for gamma, op in zip(self.gamma_phi, self.number_operators)]
             self.simulation_result = qt.mesolve(self.simulation_Hamiltonian, self.psi0, self.times, c_ops=c_ops)
 
 
@@ -511,7 +525,7 @@ class CurrentMeasurementSimulation:
         states = self.get_states()
         population = self.get_population_average()
 
-        self.covariance = np.zeros((self.num_qubits, self.num_qubits, len(self.times)))
+        self.covariance = np.zeros((len(self.number_operators), len(self.number_operators), len(self.times)))
         for i in range(self.covariance.shape[0]):
             for j in range(self.covariance.shape[1]):
                 self.covariance[i,j,:] = [qt.expect(self.number_operators[i] * self.number_operators[j], states[t]) - population[i,t] * population[j,t] for t in range(len(states))]
@@ -571,7 +585,7 @@ class CurrentMeasurementSimulation:
         readout_indices = self.readout_pair_1 + self.readout_pair_2
         for idx, qubit_idx in enumerate(readout_indices):
             ax = axs[idx // 2, idx % 2]
-            ax.plot(times[idx // 2], populations[qubit_idx], label=f'Q{qubit_idx+1}')
+            ax.plot(times[idx//2], populations[idx], label=f'Q{qubit_idx+1}')
             ax.set_title(f'Qubit {qubit_idx+1} Population')
             ax.set_xlabel('Time')
             ax.set_ylabel('Population')
@@ -725,7 +739,7 @@ class CurrentMeasurementSimulation:
         covariance = self.get_covariance()
 
         # Calculate total number of subplots (upper triangle, excluding diagonal)
-        num_plots = self.num_qubits * (self.num_qubits - 1) // 2
+        num_plots = len(self.number_operators) * (len(self.number_operators) - 1) // 2
         num_cols = 2
         num_rows = int(np.ceil(num_plots / num_cols))
 
@@ -733,8 +747,8 @@ class CurrentMeasurementSimulation:
         axs = axs.flatten()
 
         plot_idx = 0
-        for i in range(self.num_qubits):
-            for j in range(i + 1, self.num_qubits):
+        for i in range(len(self.number_operators)):
+            for j in range(i + 1, len(self.number_operators)):
                 ax = axs[plot_idx]
                 ax.plot(self.times, covariance[i, j], label=f'Cov(Q{i+1}, Q{j+1})')
                 ax.set_title(f'Q{i+1}, Q{j+1}')
@@ -756,7 +770,7 @@ class CurrentMeasurementSimulation:
         correlation = self.get_correlation()
 
         # Calculate total number of subplots (upper triangle, excluding diagonal)
-        num_plots = self.num_qubits * (self.num_qubits - 1) // 2
+        num_plots = len(self.number_operators) * (len(self.number_operators) - 1) // 2
         num_cols = 2
         num_rows = int(np.ceil(num_plots / num_cols))
 
@@ -764,8 +778,8 @@ class CurrentMeasurementSimulation:
         axs = axs.flatten()
 
         plot_idx = 0
-        for i in range(self.num_qubits):
-            for j in range(i + 1, self.num_qubits):
+        for i in range(len(self.number_operators)):
+            for j in range(i + 1, len(self.number_operators)):
                 ax = axs[plot_idx]
                 ax.plot(self.times, correlation[i, j], label=f'Corr(Q{i+1}, Q{j+1})')
                 ax.set_title(f'Q{i+1}, Q{j+1}')
@@ -781,17 +795,24 @@ class CurrentMeasurementSimulation:
         plt.show()
 
 
-    def plot_covariance_sum(self):
+    def plot_covariance_sum(self, ylim=None):
         """
         Plot the sum of the covariance for the readout pairs.
         """
         covariance_sum = self.get_covariance_sum()
 
+        readout_qubits_1 = list(np.array(self.readout_pair_1) + 1)
+        readout_qubits_2 = list(np.array(self.readout_pair_2) + 1)
+
         plt.figure(figsize=(10, 6))
         plt.plot(self.times, covariance_sum, label='Covariance Sum')
         plt.xlabel('Time')
         plt.ylabel('Covariance Sum')
-        plt.title('Sum of Covariance for Readout Pairs')
+
+        if not ylim is None:
+            plt.ylim(ylim)
+
+        plt.title(f'Current Correlations for readout pairs: {readout_qubits_1, readout_qubits_2}')
         plt.grid()
         plt.legend()
         plt.tight_layout()
@@ -799,7 +820,7 @@ class CurrentMeasurementSimulation:
 
 
 
-def get_eigenstates_and_energies(H, annihilation_operators):
+def get_eigenstates_and_energies(H, number_operators):
     ### find eigenstates and eigenenergies of resonant Hamiltonian
 
     # call this on the qutip Qobj hamiltonian H_qobj (replace with your variable)
@@ -859,7 +880,7 @@ def get_eigenstates_and_energies(H, annihilation_operators):
 
     eigenenergies, eigenstates = H.eigenstates()
 
-    total_number_operator = np.sum([op.dag() * op for op in annihilation_operators])
+    total_number_operator = np.sum([op for op in number_operators])
 
     for i in range(len(eigenenergies)):
         eigenenergy = eigenenergies[i]
@@ -954,7 +975,7 @@ def generate_triangle_lattice_Hamiltonian(annihilation_operators, J, J_parallel,
             detunings = [detunings] * num_qubits
 
         if len(detunings) != num_qubits:
-            raise ValueError("Detuning list must match the number of qubits.")
+            raise ValueError(f"Detuning list must match the number of qubits ({num_qubits}), given: {len(detunings)}.")
         for i, detuning in enumerate(detunings):
             H += detuning * annihilation_operators[i].dag() * annihilation_operators[i]
     

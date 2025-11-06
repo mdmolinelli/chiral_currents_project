@@ -9,7 +9,7 @@ class PopulationShotsBase:
 
     ramp=False
 
-    def __init__(self, filename, singleshot_measurement_dict):
+    def __init__(self, filename, singleshot_measurement_dict=None):
         self.filename = filename
         self.singleshot_measurement_dict = singleshot_measurement_dict
         
@@ -122,6 +122,8 @@ class PopulationShotsBase:
 
         bitstrings = list(product([0, 1], repeat=num_qubits))
 
+        # print(f'get covariance bitstrings: {bitstrings}')
+
         if self.covariance is None:
 
             counts = self.get_counts()
@@ -139,12 +141,22 @@ class PopulationShotsBase:
                         bitstring[i] = 1
                         bitstring[j] = 1
 
-                        bitstring_index = bitstrings.index(tuple(bitstring))
-
                         # variance is given by the formula:
                         # σ² = <n1n2> - <n1><n2>
                         # <n1n2> is exactly the average number of occurances of 11 of qubits i and j
-                        self.covariance[i, j] = counts[bitstring_index] / np.sum(counts, axis=0) - population_average[i] * population_average[j]
+                        
+                        # count all bitstrings that have a 1 in position i and j
+                        
+                        for k in range(len(bitstrings)):
+                            if bitstrings[k][i] == 1 and bitstrings[k][j] == 1:
+                                self.covariance[i, j] += counts[k]
+                                # print(f'bitstring {bitstrings[k]} index {k} has 1 in position {i} and {j}')
+
+                        # convert counts to average
+                        self.covariance[i, j] /= np.sum(counts, axis=0) 
+                        
+                        # subtract product of average 
+                        self.covariance[i, j] -= population_average[i] * population_average[j]
 
 
             # population_average = self.get_population_average()
@@ -178,6 +190,8 @@ class PopulationShotsBase:
                     else:
 
                         reduced_counts = reduce_counts(counts, i, j, num_qubits)
+
+                        # print(i, j)
 
                         singleshot_measurement = self.singleshot_measurement_dict[(i, j)]
 
@@ -345,16 +359,16 @@ class PopulationShotsTimeSweepBase(PopulationShotsBase):
         # Flatten the counts data
         counts_flat = counts.flatten()
 
-        print(f'shapes')
-        print(counts.shape)
-        print(_x.shape)
-        print(_y.shape)
+        # print(f'shapes')
+        # print(counts.shape)
+        # print(_x.shape)
+        # print(_y.shape)
 
-        print(f'flat')
-        print(counts_flat.shape)
-        print(x_flat.shape)
-        print(y_flat.shape)
-        print(z_flat.shape)
+        # print(f'flat')
+        # print(counts_flat.shape)
+        # print(x_flat.shape)
+        # print(y_flat.shape)
+        # print(z_flat.shape)
 
 
         # Create the 3D bar plot
@@ -523,7 +537,7 @@ class PopulationShotsTimeSweepBase(PopulationShotsBase):
         for idx in range(n_pairs, len(axes)):
             fig.delaxes(axes[idx])
 
-        axes[0].set_xlabel('Time Index')
+        axes[0].set_xlabel('Time (ns)')
         plt.tight_layout()
         plt.show()
 
@@ -557,7 +571,7 @@ class PopulationShotsTimeSweepBase(PopulationShotsBase):
         ax.set_ylabel('Covariance Sum')
         ax.set_title(f'Covariance Sum Over Time for Pairs ({pair_1}) and ({pair_2})')
         ax.grid(True)
-        ax.set_xlabel('Time Index')
+        ax.set_xlabel('Time (ns)')
 
         plt.tight_layout()
         plt.show()

@@ -581,9 +581,9 @@ def acquire_data(filepath):
         time_units = 2.32515 / 16 # tproc_V1
         time_units = 2.32515*2 / 16 # tproc_V2
         
-        # for i in f:
+        for i in f:
             # print(f'{i}: {f[i][()]}')
-            # print(i)
+            print(i)
 
 
         try:
@@ -623,3 +623,9 @@ def generate_ramp_beamsplitter_correlations_filename(year, month, day, hour, min
     date_code = f'{year}_{month}_{day}'
     time_code = f'{hour}_{minute}_{second}'
     return r'V:\QSimMeasurements\Measurements\8QV1_Triangle_Lattice\RampBeamsplitterCorrelationsR\RampBeamsplitterCorrelationsR_{}\RampBeamsplitterCorrelationsR_{}_{}_data.h5'.format(date_code, date_code, time_code)
+
+
+def generate_ramp_beamsplitter_correlations_clean_filename(year, month, day, hour, minute, second):
+    date_code = f'{year}_{month}_{day}'
+    time_code = f'{hour}_{minute}_{second}'
+    return r'V:\QSimMeasurements\Measurements\8QV1_Triangle_Lattice\RampBeamsplitterCleanTiming\RampBeamsplitterCleanTiming_{}\RampBeamsplitterCleanTiming_{}_{}_data.h5'.format(date_code, date_code, time_code)
