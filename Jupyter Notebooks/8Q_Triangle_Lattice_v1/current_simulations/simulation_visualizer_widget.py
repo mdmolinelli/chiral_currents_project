@@ -701,6 +701,49 @@ class SimulationVisualizerWidget(QWidget):
                     edge_label = self.edge_labels[qubit_pair]
                     edge_label.setPlainText(f'{current_value:.2f}')
 
+
+    def plot_bond_order(self):
+
+        # reset all edge colors
+        for edge in self.edge_markers:
+            rect = self.edge_markers[edge]
+            rect.setBrush(pg.mkBrush(255, 255, 255))
+
+        cmap = self.correlations_color_map
+
+        bond_order_values = self.simulation.get_bond_order_values()
+
+        all_qubits = [i+1 for i in range(self.num_qubits)]
+        # generate all possible qubit pairs with j > i using itertools combinations
+        qubit_pairs = list(itertools.combinations(all_qubits, 2))
+
+
+        for qubit_pair in qubit_pairs:
+
+            if qubit_pair in bond_order_values:
+                print(f'Currents for qubit pair {qubit_pair}: {bond_order_values[qubit_pair]}')
+
+                current_value = bond_order_values[qubit_pair]
+
+                # Normalize correlation value to [0, 1] for colormap
+                norm_current = (current_value + 1) / 2  # Assuming correlation values are in [-1, 1]
+
+                # Use matplotlib's seismic colormap
+                # color = cmap(norm_current)
+                qcolor = self.correlations_color_map.map(norm_current, mode='qcolor')
+
+                # Convert to QColor for PyQtGraph
+                # qcolor = pg.mkColor(color[0] * 255, color[1] * 255, color[2] * 255)
+
+                if qubit_pair in self.edge_markers:
+                    rect = self.edge_markers[qubit_pair]
+                    rect.setBrush(pg.mkBrush(qcolor))
+
+                # set labels
+                if qubit_pair in self.edge_labels:
+                    edge_label = self.edge_labels[qubit_pair]
+                    edge_label.setPlainText(f'{current_value:.2f}')
+
     def plot_current_correlations(self, Q_i, Q_j):
 
         # reset all edge colors

@@ -55,6 +55,8 @@ class CurrentSimulation:
         self.currents = None
         self.current_correlations = None
 
+        self.bond_order_values = None
+
         self.total_chiral_current = None
         self.average_rung_current = None
 
@@ -505,6 +507,42 @@ class CurrentSimulation:
 
         self.current_correlations = current_correlations
 
+    def calculate_bond_order_values_fock(self, psi0):
+        # bond order operator is (a_i^dagger a_j + a_j^dagger a_i)
+
+        all_qubits = list(range(1, self.num_qubits+1))
+        all_qubit_pairs = list(combinations(all_qubits, 2))
+
+        psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
+        bond_order_values = {}
+
+        for i in range(len(all_qubit_pairs)):
+            
+            q_1, q_2 = all_qubit_pairs[i]
+
+
+            # phase information stored in coupling in Hamiltonian matrix element
+            coupling = self.get_single_particle_Hamiltonian()[q_1 - 1, q_2 - 1]
+            if coupling == 0:
+                continue
+
+            value = 0
+            # a_i^dagger a_j term
+            new_state = psi0_fock.apply_raising_operator(q_1-1, self.num_levels).apply_lowering_operator(q_2-1)
+            value += psi0_fock.inner_product(new_state)
+            # a_j^dagger a_i term
+            new_state = psi0_fock.apply_lowering_operator(q_1-1).apply_raising_operator(q_2-1, self.num_levels)
+            value += psi0_fock.inner_product(new_state)
+
+            # for rungs starting at top rung, (odd qubits) multiply by -1
+            if abs(q_1 - q_2) == 1 and q_1 % 2 == 1:
+                value *= -1
+
+            bond_order_values[q_1, q_2] = value.real
+
+        self.bond_order_values = bond_order_values
+
+
     def get_currents(self):
         self.calculate_currents_fock(self.psi0)
         return self.currents
@@ -512,6 +550,10 @@ class CurrentSimulation:
     def get_current_correlations(self):
         self.calculate_current_correlations_fock(self.psi0)
         return self.current_correlations
+
+    def get_bond_order_values(self):
+        self.calculate_bond_order_values_fock(self.psi0)
+        return self.bond_order_values
     
     def calculate_total_chiral_current(self, psi0=None):
         """

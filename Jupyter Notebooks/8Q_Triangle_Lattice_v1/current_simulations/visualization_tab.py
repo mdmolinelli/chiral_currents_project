@@ -132,6 +132,11 @@ class VisualizationTab(LatticeTabWidget):
         self.calculate_current_correlations_button.clicked.connect(self.plot_current_correlations)
         simulation_controls_layout.addWidget(self.calculate_current_correlations_button, row, 0, 1, 3)
 
+        row += 1
+        self.calculate_bond_order_button = QPushButton("Calculate Bond Order Values")
+        self.calculate_bond_order_button.clicked.connect(self.visualizer.plot_bond_order)
+        simulation_controls_layout.addWidget(self.calculate_bond_order_button, row, 0, 1, 3)
+
 
         
     def create_lattice(self):

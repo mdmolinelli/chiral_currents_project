@@ -1,6 +1,7 @@
 from itertools import product
 
 import h5py
+import math
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -21,6 +22,8 @@ class PopulationShotsBase:
 
         self.counts = None
         self.counts_corrected = None
+        self.counts_post_selected = None
+        self.counts_corrected_post_selected = None
 
         self.num_qubits = None
         self.readout_qubits = None
@@ -93,6 +96,16 @@ class PopulationShotsBase:
         if self.counts_corrected is None:
             self.correct_counts()
         return self.counts_corrected
+
+    def get_counts_post_selected(self):
+        if self.counts_post_selected is None:
+            self.counts_post_selected = self.__post_select_counts(self.get_counts())
+        return self.counts_post_selected 
+
+    def get_counts_corrected_post_selected(self):
+        if self.counts_corrected_post_selected is None:
+            self.counts_corrected_post_selected = self.__post_select_counts(self.get_counts_corrected())
+        return self.counts_corrected_post_selected   
     
     def get_standard_deviation(self):
         if self.standard_deviation is None:
@@ -254,26 +267,37 @@ class PopulationShotsBase:
             multi_idx = np.unravel_index(i, middle_shape)
             # Now assign to (bitstring_idx, *multi_idx)
             self.counts[(slice(None),) + multi_idx] = flat_counts
+
+ 
+
+    def __post_select_counts(self, counts, num_particles=4):
+        counts_post_selected = np.zeros_like(counts)
+        basis = list(product([0,1], repeat=8))
+
+        for i, outcome in enumerate(basis):
+            if sum(outcome) == num_particles:
+                counts_post_selected[i, :] = counts[i, :]
+
+        return counts_post_selected
         
         
-    def correct_counts(self, readout_indices=None):
-
-        readout_indices = self.get_readout_indices()
-
-        if len(readout_indices) > 2:
-            if readout_indices is None:
-                raise ValueError("readout_indices must be provided for more than 2 qubits.")
-            else:
-                raise RuntimeError('unimplemented for more than 2 qubits, even with readout_indices provided.')
+    def correct_counts(self):
+        '''
+        Use the full Kronecker product of all confusion matrices
+        '''
 
         counts = self.get_counts()
 
+        confusion_matrices = self.get_confusion_matrices()
+        confusion_inverse_matrices = np.array([np.linalg.inv(confusion_matrix) for confusion_matrix in confusion_matrices])
 
-        confusion_matrix = self.singleshot_measurement_dict[tuple(readout_indices)].get_confusion_matrix()
+        joint_confusion_inverse_matrix = confusion_inverse_matrices[0]
+        for i in range(1, confusion_inverse_matrices.shape[0]):
+            joint_confusion_inverse_matrix = np.kron(joint_confusion_inverse_matrix, confusion_inverse_matrices[i])
 
-        inverse_confusion_matrix = np.linalg.inv(confusion_matrix)
 
-        self.counts_corrected = inverse_confusion_matrix @ counts
+
+        self.counts_corrected = joint_confusion_inverse_matrix @ counts
 
     def plot_counts(self, corrected=False, both=False):
 
@@ -575,7 +599,95 @@ class PopulationShotsTimeSweepBase(PopulationShotsBase):
 
         plt.tight_layout()
         plt.show()
+
         
+    # the following functions are used to get populations and current correlations from the given counts, which can be post-selected and/or corrected
+    
+    def get_covariance_sum_post_selected(self, readout_pair_1, readout_pair_2):
+        return self.__calculate_current_correlation_from_counts(self.get_counts_post_selected(), readout_pair_1, readout_pair_2)
+    
+
+    def get_covariance_sum_corrected_post_selected(self, readout_pair_1, readout_pair_2):
+        return self.__calculate_current_correlation_from_counts(self.get_counts_corrected_post_selected(), readout_pair_1, readout_pair_2)
+
+    def __calculate_population_from_counts(self, counts, readout_pair_1, readout_pair_2):
+        """
+        Compute single-qubit populations for the four qubits in readout_pair_1 and readout_pair_2.
+        """
+        if not abs(readout_pair_1[1] - readout_pair_1[0]) == 1:
+            raise ValueError(f'readout pair qubits must be sequential, given: {readout_pair_1}')
+        if not abs(readout_pair_2[1] - readout_pair_2[0]) == 1:
+            raise ValueError(f'readout pair qubits must be sequential, given: {readout_pair_2}')
+
+        basis = list(product(range(2), repeat=int(math.log2(counts.shape[0]))))
+
+        # Normalize counts to probabilities per time slice
+        probabilities = counts / np.sum(counts, axis=0, keepdims=True)
+
+        qubit_indices = readout_pair_1 + readout_pair_2
+        population_average = np.zeros((4, probabilities.shape[-1]))
+
+        # Compute <n_i> for each of the four qubits of interest
+        for i, q_index in enumerate(qubit_indices):
+            for outcome_idx, outcome in enumerate(basis):
+                if outcome[q_index] == 1:
+                    population_average[i, :] += probabilities[outcome_idx, :]
+
+        return population_average
+
+
+    def __calculate_current_correlation_from_counts(self, counts, readout_pair_1, readout_pair_2):
+        """
+        Compute the current correlation
+        O = <n1 n3> - <n1 n4> - <n2 n3> + <n2 n4>,
+        using properly normalized post-selected counts.
+        """
+
+        if not abs(readout_pair_1[1] - readout_pair_1[0]) == 1:
+            raise ValueError(f'readout pair qubits must be sequential, given: {readout_pair_1}')
+        if not abs(readout_pair_2[1] - readout_pair_2[0]) == 1:
+            raise ValueError(f'readout pair qubits must be sequential, given: {readout_pair_2}')
+
+        basis = list(product(range(2), repeat=int(math.log2(counts.shape[0]))))
+
+        population_average = self.__calculate_population_from_counts(
+            counts, readout_pair_1, readout_pair_2
+        )
+
+        # Normalize counts after post-selection
+        probabilities = counts / np.sum(counts, axis=0, keepdims=True)
+
+        
+
+
+        # Define the four qubit indices of interest
+        q1, q2 = readout_pair_1
+        q3, q4 = readout_pair_2
+
+        # Compute all pairwise <n_i n_j>
+        pair_means = np.zeros((4, probabilities.shape[-1]))
+        pair_indices = [(q1, q3), (q1, q4), (q2, q3), (q2, q4)]
+
+        for k, (i_idx, j_idx) in enumerate(pair_indices):
+            outcome_count = np.zeros(probabilities.shape[-1])
+            for outcome_idx, outcome in enumerate(basis):
+                if outcome[i_idx] == 1 and outcome[j_idx] == 1:
+                    outcome_count += probabilities[outcome_idx, :]
+            pair_means[k, :] = outcome_count  # Already normalized
+
+        # Compute <n_i> values for subtraction
+        n1, n2, n3, n4 = population_average
+
+        # Covariances
+        n1n3 = pair_means[0, :] - n1 * n3
+        n1n4 = pair_means[1, :] - n1 * n4
+        n2n3 = pair_means[2, :] - n2 * n3
+        n2n4 = pair_means[3, :] - n2 * n4
+
+        # Combine into current correlation
+        current_correlations = n1n3 - n1n4 - n2n3 + n2n4
+
+        return current_correlations
 
 class RampPopulationShotsMeasurement(PopulationShotsBase):
     ramp = True
@@ -653,6 +765,9 @@ def acquire_data(filepath, ramp=False):
         return population, counts, readout_list, confusion_matrix, times
     else:
         return population, counts, readout_list, confusion_matrix
+    
+
+
 
 
 def generate_ramp_population_shots_filename(year, month, day, hour, minute, second):

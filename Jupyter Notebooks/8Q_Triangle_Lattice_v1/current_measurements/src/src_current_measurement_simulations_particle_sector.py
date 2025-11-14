@@ -75,7 +75,7 @@ class CurrentMeasurementSimulationParticleSector(CurrentMeasurementSimulation):
         '''
         return generate_triangle_lattice_Hamiltonian_particle_sector(self.num_qubits, self.num_particles, *args, **kwargs)
 
-def generate_triangle_lattice_Hamiltonian_particle_sector(num_qubits, particle_number, annihilation_operators, J, J_parallel, U, detuning=None):
+def generate_triangle_lattice_Hamiltonian_particle_sector(num_qubits, particle_number, annihilation_operators, J, J_parallel, U, detuning=None, **kwargs):
     """
     Construct the many-body Hamiltonian for bosons.
     """
