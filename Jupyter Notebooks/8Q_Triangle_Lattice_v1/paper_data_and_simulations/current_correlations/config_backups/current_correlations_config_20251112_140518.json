@@ -1,0 +1,31 @@
+{
+    "coupling_point_1": {
+        "phase": 1,
+        "ratio": 2,
+        "coupling": {},
+        "simulation_config": {},
+        "data_config": {
+            "filenames": {}
+        }
+    },
+    "coupling_point_2": {
+        "simulation_config": {},
+        "data_config": {}
+    },
+    "coupling_point_3": {
+        "simulation_config": {},
+        "data_config": {}
+    },
+    "coupling_point_4": {
+        "simulation_config": {},
+        "data_config": {}
+    },
+    "coupling_point_5": {
+        "simulation_config": {},
+        "data_config": {}
+    },
+    "coupling_point_6": {
+        "simulation_config": {},
+        "data_config": {}
+    }
+}

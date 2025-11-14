@@ -1,0 +1,170 @@
+{
+    "coupling_point_1": {
+        "phase": 1,
+        "ratio": 2,
+        "coupling": {},
+        "simulation_config": {},
+        "data_config": {}
+    },
+    "coupling_point_2": {
+        "simulation_config": {},
+        "data_config": {
+            "((1, 2), (3, 4))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 23
+            },
+            "((3, 4), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 25
+            },
+            "((3, 4), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 25
+            },
+            "((5, 6), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
+                "configuration": "12-34-56-78",
+                "beamsplitter_time": 23
+            },
+            "((2, 3), (4, 5))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
+                "configuration": "1-23-45-67-8",
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
+                "configuration": "1-23-45-67-8",
+                "beamsplitter_time": 25
+            },
+            "((4, 5), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
+                "configuration": "1-23-45-67-8",
+                "beamsplitter_time": 24
+            },
+            "((1, 2), (4, 5))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "13",
+                "minute": "16",
+                "second": "24",
+                "configuration": "12-3-45-6-7-8",
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "18",
+                "minute": "04",
+                "second": "26",
+                "configuration": "1-23-4-56-7-8",
+                "beamsplitter_time": 25
+            },
+            "((3, 4), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "06",
+                "hour": "10",
+                "minute": "52",
+                "second": "49",
+                "configuration": "1-2-34-5-67-8",
+                "beamsplitter_time": 25
+            },
+            "((4, 5), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "10",
+                "hour": "12",
+                "minute": "27",
+                "second": "11",
+                "configuration": "1-2-3-45-6-78",
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "13",
+                "minute": "16",
+                "second": "24",
+                "configuration": "12-3-4-5-67-8",
+                "beamsplitter_time": 15
+            },
+            "((2, 3), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "21",
+                "minute": "18",
+                "second": "24",
+                "configuration": "1-23-4-5-6-78",
+                "beamsplitter_time": 25
+            },
+            "simulation_config": {
+                "num_levels": 4,
+                "num_qubits": 8,
+                "num_particles": 4,
+                "U": 1130.9733552923256,
+                "psi0": -1,
+                "T1": 40,
+                "T2": 2,
+                "times": 
