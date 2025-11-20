@@ -372,18 +372,7 @@
         "data_config": {}
     },
     "coupling_point_4": {
-        "simulation_config": {
-            "num_levels": 4,
-            "num_qubits": 8,
-            "num_particles": 4,
-            "U": 180,
-            "psi0": -1,
-            "T1": 40,
-            "T2": 2,
-            "time_start": 0,
-            "time_stop": 0.5,
-            "time_num_points": 1001
-        },
+        "simulation_config": {},
         "data_config": {
             "((1, 2), (3, 4))": {
                 "configuration": "12-34-56-78",
@@ -790,7 +779,7 @@
                 "highest": {
                     "year": "2025",
                     "month": "11",
-                    "day": "17",
+                    "day": "10",
                     "hour": "19",
                     "minute": "25",
                     "second": "09"
@@ -798,7 +787,7 @@
                 "lowest": {
                     "year": "2025",
                     "month": "11",
-                    "day": "17",
+                    "day": "10",
                     "hour": "20",
                     "minute": "44",
                     "second": "36"

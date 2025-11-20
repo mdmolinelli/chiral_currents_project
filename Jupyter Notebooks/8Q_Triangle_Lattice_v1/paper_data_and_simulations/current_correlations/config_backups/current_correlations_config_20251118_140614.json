@@ -21,6 +21,12 @@
         },
         "data_config": {
             "((1, 2), (3, 4))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -39,10 +45,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((1, 2), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -61,10 +74,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((1, 2), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 23,
                 "measurement_detunings": [
@@ -83,10 +103,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((3, 4), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -105,10 +132,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((3, 4), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -127,10 +161,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((5, 6), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "04",
+                "hour": "12",
+                "minute": "54",
+                "second": "01",
                 "configuration": "12-34-56-78",
                 "beamsplitter_time": 23,
                 "measurement_detunings": [
@@ -149,10 +190,17 @@
                     "day": "04",
                     "hour": "12",
                     "minute": "54",
-                    "second": "01"
+                    "second": "01",
+                    "configuration": "12-34-56-78"
                 }
             },
             "((2, 3), (4, 5))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
                 "configuration": "1-23-45-67-8",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -171,10 +219,17 @@
                     "day": "05",
                     "hour": "11",
                     "minute": "15",
-                    "second": "26"
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
                 }
             },
             "((2, 3), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
                 "configuration": "1-23-45-67-8",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -193,10 +248,17 @@
                     "day": "05",
                     "hour": "11",
                     "minute": "15",
-                    "second": "26"
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
                 }
             },
             "((4, 5), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "11",
+                "minute": "15",
+                "second": "26",
                 "configuration": "1-23-45-67-8",
                 "beamsplitter_time": 24,
                 "measurement_detunings": [
@@ -215,10 +277,17 @@
                     "day": "05",
                     "hour": "11",
                     "minute": "15",
-                    "second": "26"
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
                 }
             },
             "((1, 2), (4, 5))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "13",
+                "minute": "16",
+                "second": "24",
                 "configuration": "12-3-45-6-7-8",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -237,10 +306,17 @@
                     "day": "05",
                     "hour": "13",
                     "minute": "16",
-                    "second": "24"
+                    "second": "24",
+                    "configuration": "12-3-45-6-7-8"
                 }
             },
             "((2, 3), (5, 6))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "18",
+                "minute": "04",
+                "second": "26",
                 "configuration": "1-23-4-56-7-8",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -259,10 +335,17 @@
                     "day": "05",
                     "hour": "18",
                     "minute": "04",
-                    "second": "26"
+                    "second": "26",
+                    "configuration": "1-23-4-56-7-8"
                 }
             },
             "((3, 4), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "06",
+                "hour": "10",
+                "minute": "52",
+                "second": "49",
                 "configuration": "1-2-34-5-67-8",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -281,10 +364,17 @@
                     "day": "06",
                     "hour": "10",
                     "minute": "52",
-                    "second": "49"
+                    "second": "49",
+                    "configuration": "1-2-34-5-67-8"
                 }
             },
             "((4, 5), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "10",
+                "hour": "12",
+                "minute": "27",
+                "second": "11",
                 "configuration": "1-2-3-45-6-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -303,10 +393,17 @@
                     "day": "10",
                     "hour": "12",
                     "minute": "27",
-                    "second": "11"
+                    "second": "11",
+                    "configuration": "1-2-3-45-6-78"
                 }
             },
             "((1, 2), (6, 7))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "13",
+                "minute": "16",
+                "second": "24",
                 "configuration": "12-3-4-5-67-8",
                 "beamsplitter_time": 15,
                 "measurement_detunings": [
@@ -325,10 +422,17 @@
                     "day": "05",
                     "hour": "13",
                     "minute": "16",
-                    "second": "24"
+                    "second": "24",
+                    "configuration": "12-3-4-5-67-8"
                 }
             },
             "((2, 3), (7, 8))": {
+                "year": "2025",
+                "month": "11",
+                "day": "05",
+                "hour": "21",
+                "minute": "18",
+                "second": "24",
                 "configuration": "1-23-4-5-6-78",
                 "beamsplitter_time": 25,
                 "measurement_detunings": [
@@ -347,7 +451,145 @@
                     "day": "05",
                     "hour": "21",
                     "minute": "18",
-                    "second": "24"
+                    "second": "24",
+                    "configuration": "1-23-4-5-6-78"
+                }
+            },
+            "highest": {
+                "((1, 2), (3, 4))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((1, 2), (5, 6))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((1, 2), (7, 8))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((3, 4), (5, 6))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((3, 4), (7, 8))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((5, 6), (7, 8))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "04",
+                    "hour": "12",
+                    "minute": "54",
+                    "second": "01",
+                    "configuration": "12-34-56-78"
+                },
+                "((2, 3), (4, 5))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "11",
+                    "minute": "15",
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
+                },
+                "((2, 3), (6, 7))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "11",
+                    "minute": "15",
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
+                },
+                "((4, 5), (6, 7))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "11",
+                    "minute": "15",
+                    "second": "26",
+                    "configuration": "1-23-45-67-8"
+                },
+                "((1, 2), (4, 5))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "13",
+                    "minute": "16",
+                    "second": "24",
+                    "configuration": "12-3-45-6-7-8"
+                },
+                "((2, 3), (5, 6))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "18",
+                    "minute": "04",
+                    "second": "26",
+                    "configuration": "1-23-4-56-7-8"
+                },
+                "((3, 4), (6, 7))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "06",
+                    "hour": "10",
+                    "minute": "52",
+                    "second": "49",
+                    "configuration": "1-2-34-5-67-8"
+                },
+                "((4, 5), (7, 8))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "10",
+                    "hour": "12",
+                    "minute": "27",
+                    "second": "11",
+                    "configuration": "1-2-3-45-6-78"
+                },
+                "((1, 2), (6, 7))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "13",
+                    "minute": "16",
+                    "second": "24",
+                    "configuration": "12-3-4-5-67-8"
+                },
+                "((2, 3), (7, 8))": {
+                    "year": "2025",
+                    "month": "11",
+                    "day": "05",
+                    "hour": "21",
+                    "minute": "18",
+                    "second": "24",
+                    "configuration": "1-23-4-5-6-78"
                 }
             }
         },
@@ -372,21 +614,9 @@
         "data_config": {}
     },
     "coupling_point_4": {
-        "simulation_config": {
-            "num_levels": 4,
-            "num_qubits": 8,
-            "num_particles": 4,
-            "U": 180,
-            "psi0": -1,
-            "T1": 40,
-            "T2": 2,
-            "time_start": 0,
-            "time_stop": 0.5,
-            "time_num_points": 1001
-        },
+        "simulation_config": {},
         "data_config": {
             "((1, 2), (3, 4))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -396,27 +626,9 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((1, 2), (4, 5))": {
-                "configuration": "12-3-45-6-7-8",
                 "measurement_detunings": [
                     3141.592653589793,
                     3141.592653589793,
@@ -426,27 +638,9 @@
                     -1884.9555921538758,
                     -1884.9555921538758,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "11",
-                    "minute": "58",
-                    "second": "35"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "15",
-                    "minute": "07",
-                    "second": "34"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((1, 2), (5, 6))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -456,27 +650,9 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((1, 2), (6, 7))": {
-                "configuration": "12-3-4-5-67-8",
                 "measurement_detunings": [
                     3455.7519189487725,
                     3455.7519189487725,
@@ -486,27 +662,9 @@
                     2827.4333882308138,
                     2827.4333882308138,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "21",
-                    "minute": "36",
-                    "second": "50"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "23",
-                    "minute": "06",
-                    "second": "51"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((1, 2), (7, 8))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -516,27 +674,9 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 23
+                ]
             },
             "((2, 3), (4, 5))": {
-                "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     2827.4333882308138,
@@ -546,27 +686,9 @@
                     2199.114857512855,
                     2199.114857512855,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "00",
-                    "minute": "21",
-                    "second": "31"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "01",
-                    "minute": "10",
-                    "second": "25"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((2, 3), (5, 6))": {
-                "configuration": "1-23-4-56-7-8",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     628.3185307179587,
@@ -576,27 +698,9 @@
                     3141.592653589793,
                     -1884.9555921538758,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "16",
-                    "hour": "20",
-                    "minute": "21",
-                    "second": "14"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "16",
-                    "hour": "22",
-                    "minute": "32",
-                    "second": "09"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((2, 3), (6, 7))": {
-                "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     2827.4333882308138,
@@ -606,27 +710,9 @@
                     2199.114857512855,
                     2199.114857512855,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "00",
-                    "minute": "21",
-                    "second": "31"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "01",
-                    "minute": "10",
-                    "second": "25"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((2, 3), (7, 8))": {
-                "configuration": "1-23-4-5-6-78",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     3455.7519189487725,
@@ -636,27 +722,9 @@
                     -1884.9555921538758,
                     2827.4333882308138,
                     2827.4333882308138
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "14",
-                    "minute": "18",
-                    "second": "58"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "11",
-                    "minute": "17",
-                    "second": "43"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((3, 4), (5, 6))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -666,27 +734,9 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((3, 4), (6, 7))": {
-                "configuration": "1-2-34-5-67-8",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     -1884.9555921538758,
@@ -696,27 +746,9 @@
                     3141.592653589793,
                     3141.592653589793,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "16",
-                    "minute": "21",
-                    "second": "25"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "17",
-                    "minute": "14",
-                    "second": "14"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((3, 4), (7, 8))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -726,27 +758,9 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((4, 5), (6, 7))": {
-                "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     2827.4333882308138,
@@ -756,27 +770,9 @@
                     2199.114857512855,
                     2199.114857512855,
                     -1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "00",
-                    "minute": "21",
-                    "second": "31"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "15",
-                    "hour": "01",
-                    "minute": "10",
-                    "second": "25"
-                },
-                "beamsplitter_time": 24
+                ]
             },
             "((4, 5), (7, 8))": {
-                "configuration": "1-2-3-45-6-78",
                 "measurement_detunings": [
                     -1884.9555921538758,
                     -1884.9555921538758,
@@ -786,27 +782,9 @@
                     -1884.9555921538758,
                     3141.592653589793,
                     3141.592653589793
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "19",
-                    "minute": "25",
-                    "second": "09"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "17",
-                    "hour": "20",
-                    "minute": "44",
-                    "second": "36"
-                },
-                "beamsplitter_time": 25
+                ]
             },
             "((5, 6), (7, 8))": {
-                "configuration": "12-34-56-78",
                 "measurement_detunings": [
                     -1256.6370614359173,
                     -1256.6370614359173,
@@ -816,24 +794,7 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "20",
-                    "minute": "59",
-                    "second": "07"
-                },
-                "lowest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "14",
-                    "hour": "21",
-                    "minute": "39",
-                    "second": "41"
-                },
-                "beamsplitter_time": 23
+                ]
             }
         },
         "coupling": {
