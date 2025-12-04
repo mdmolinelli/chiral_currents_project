@@ -19,11 +19,12 @@ class CurrentMeasurementSimulationParticleSector(CurrentMeasurementSimulation):
 
         self.basis = generate_basis(self.num_levels, self.num_qubits, self.num_particles)
 
-        print(f'Number of basis states: {len(self.basis)}')
-        print(self.basis)
+        if self.print_logs:
+            print(f'Number of basis states: {len(self.basis)}')
+            print(self.basis)
 
-        print('single particle Hamiltonian:')
-        print(self.single_particle_Hamiltonian)
+            print('single particle Hamiltonian:')
+            print(self.single_particle_Hamiltonian)
 
         # annihilation operators are not defined in the particle number sector
         self.annihilation_operators = []
@@ -55,7 +56,8 @@ class CurrentMeasurementSimulationParticleSector(CurrentMeasurementSimulation):
         for i in range(self.num_qubits-1):
             j = i + 1
             matrix_element = self.single_particle_Hamiltonian[i, j]
-            print(f'matrix element {i},{j}: {matrix_element}')
+            if self.print_logs:
+                print(f'matrix element {i},{j}: {matrix_element}')
             self.current_operators[i][i, j] = -1j * matrix_element
             self.current_operators[i][j, i] = 1j * np.conjugate(matrix_element)
 

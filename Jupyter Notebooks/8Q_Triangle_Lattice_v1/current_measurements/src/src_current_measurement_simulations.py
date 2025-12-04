@@ -443,7 +443,7 @@ class CurrentMeasurementSimulation:
         if self.current_correlation_from_operator is None:
             self.current_correlation_from_operator = qt.expect(self.current_correlator, self.get_states())
             
-            print(self.current_correlation_from_operator[0]/(self.J[0]*self.J[-1]))
+            # print(self.current_correlation_from_operator[0]/(self.J[0]*self.J[-1]))
 
             current_average_from_operator = [qt.expect(current_operator, self.get_states()) for current_operator in self.current_operators]
             self.current_correlation_from_operator -= current_average_from_operator[0]*current_average_from_operator[1]
