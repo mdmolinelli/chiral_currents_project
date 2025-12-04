@@ -20,16 +20,15 @@
         "simulation_config": {},
         "data_config": {
             "((1, 2), (3, 4))": {
+                "configuration": "12-34-56-78",
                 "highest": {
                     "year": "2025",
                     "month": "11",
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((1, 2), (5, 6))": {
                 "highest": {
@@ -38,10 +37,8 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((1, 2), (7, 8))": {
                 "highest": {
@@ -50,10 +47,8 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((3, 4), (5, 6))": {
                 "highest": {
@@ -62,10 +57,8 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((3, 4), (7, 8))": {
                 "highest": {
@@ -74,10 +67,8 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((5, 6), (7, 8))": {
                 "highest": {
@@ -86,10 +77,8 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
+                    "second": "36"
+                }
             },
             "((2, 3), (4, 5))": {
                 "highest": {
@@ -98,10 +87,8 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
+                    "second": "30"
+                }
             },
             "((2, 3), (6, 7))": {
                 "highest": {
@@ -110,10 +97,8 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
+                    "second": "30"
+                }
             },
             "((4, 5), (6, 7))": {
                 "highest": {
@@ -122,28 +107,8 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((1, 2), (4, 5))": {
-                "configuration": "12-3-45-6-7-8"
-            },
-            "((2, 3), (5, 6))": {
-                "configuration": "1-23-4-56-7-8"
-            },
-            "((3, 4), (6, 7))": {
-                "configuration": "1-2-34-5-67-8"
-            },
-            "((4, 5), (7, 8))": {
-                "configuration": "1-2-3-45-6-78"
-            },
-            "((1, 2), (6, 7))": {
-                "configuration": "12-3-4-5-67-8"
-            },
-            "((2, 3), (7, 8))": {
-                "configuration": "1-23-4-5-6-78"
+                    "second": "30"
+                }
             }
         }
     },
@@ -529,7 +494,7 @@
     },
     "coupling_point_4": {
         "simulation_config": {
-            "num_levels": 3,
+            "num_levels": 4,
             "num_qubits": 8,
             "num_particles": 4,
             "U": 180,
