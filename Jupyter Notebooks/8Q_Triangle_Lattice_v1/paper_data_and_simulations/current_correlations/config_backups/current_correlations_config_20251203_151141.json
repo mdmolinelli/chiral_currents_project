@@ -2,150 +2,9 @@
     "coupling_point_1": {
         "phase": 1,
         "ratio": 2,
-        "coupling": {
-            "J_13": -6.85,
-            "J_24": -6.76,
-            "J_35": -7.17,
-            "J_46": -7.3,
-            "J_57": -7.08,
-            "J_68": -6.82,
-            "J_12": -5.82,
-            "J_23": -5.87,
-            "J_34": -5.53,
-            "J_45": -5.79,
-            "J_56": -5.55,
-            "J_67": -5.83,
-            "J_78": -5.85
-        },
+        "coupling": {},
         "simulation_config": {},
-        "data_config": {
-            "((1, 2), (3, 4))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((1, 2), (5, 6))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((1, 2), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((3, 4), (5, 6))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((3, 4), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((5, 6), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((2, 3), (4, 5))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((2, 3), (6, 7))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((4, 5), (6, 7))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((1, 2), (4, 5))": {
-                "configuration": "12-3-45-6-7-8"
-            },
-            "((2, 3), (5, 6))": {
-                "configuration": "1-23-4-56-7-8"
-            },
-            "((3, 4), (6, 7))": {
-                "configuration": "1-2-34-5-67-8"
-            },
-            "((4, 5), (7, 8))": {
-                "configuration": "1-2-3-45-6-78"
-            },
-            "((1, 2), (6, 7))": {
-                "configuration": "12-3-4-5-67-8"
-            },
-            "((2, 3), (7, 8))": {
-                "configuration": "1-23-4-5-6-78"
-            }
-        }
+        "data_config": {}
     },
     "coupling_point_2": {
         "simulation_config": {
@@ -529,7 +388,7 @@
     },
     "coupling_point_4": {
         "simulation_config": {
-            "num_levels": 3,
+            "num_levels": 4,
             "num_qubits": 8,
             "num_particles": 4,
             "U": 180,
@@ -537,7 +396,7 @@
             "T1": 40,
             "T2": 2,
             "time_start": 0,
-            "time_stop": 0.12,
+            "time_stop": 0.5,
             "time_num_points": 1001
         },
         "data_config": {
@@ -559,8 +418,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -568,8 +426,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 25
             },
@@ -591,8 +448,7 @@
                     "day": "15",
                     "hour": "11",
                     "minute": "58",
-                    "second": "35",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "35"
                 },
                 "lowest": {
                     "year": "2025",
@@ -600,8 +456,7 @@
                     "day": "15",
                     "hour": "15",
                     "minute": "07",
-                    "second": "34",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "34"
                 },
                 "beamsplitter_time": 25
             },
@@ -623,8 +478,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -632,8 +486,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 25
             },
@@ -655,8 +508,7 @@
                     "day": "15",
                     "hour": "21",
                     "minute": "36",
-                    "second": "50",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "50"
                 },
                 "lowest": {
                     "year": "2025",
@@ -664,8 +516,7 @@
                     "day": "15",
                     "hour": "23",
                     "minute": "06",
-                    "second": "51",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "51"
                 },
                 "beamsplitter_time": 25
             },
@@ -687,8 +538,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -696,8 +546,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 23
             },
@@ -719,8 +568,7 @@
                     "day": "15",
                     "hour": "00",
                     "minute": "21",
-                    "second": "31",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "31"
                 },
                 "lowest": {
                     "year": "2025",
@@ -728,8 +576,7 @@
                     "day": "15",
                     "hour": "01",
                     "minute": "10",
-                    "second": "25",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "25"
                 },
                 "beamsplitter_time": 25
             },
@@ -751,8 +598,7 @@
                     "day": "16",
                     "hour": "20",
                     "minute": "21",
-                    "second": "14",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "14"
                 },
                 "lowest": {
                     "year": "2025",
@@ -760,8 +606,7 @@
                     "day": "16",
                     "hour": "22",
                     "minute": "32",
-                    "second": "09",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "09"
                 },
                 "beamsplitter_time": 25
             },
@@ -783,8 +628,7 @@
                     "day": "15",
                     "hour": "00",
                     "minute": "21",
-                    "second": "31",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "31"
                 },
                 "lowest": {
                     "year": "2025",
@@ -792,8 +636,7 @@
                     "day": "15",
                     "hour": "01",
                     "minute": "10",
-                    "second": "25",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "25"
                 },
                 "beamsplitter_time": 25
             },
@@ -815,8 +658,7 @@
                     "day": "17",
                     "hour": "14",
                     "minute": "18",
-                    "second": "58",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "58"
                 },
                 "lowest": {
                     "year": "2025",
@@ -824,8 +666,7 @@
                     "day": "17",
                     "hour": "11",
                     "minute": "17",
-                    "second": "43",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "43"
                 },
                 "beamsplitter_time": 25
             },
@@ -847,8 +688,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -856,8 +696,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 25
             },
@@ -879,8 +718,7 @@
                     "day": "17",
                     "hour": "16",
                     "minute": "21",
-                    "second": "25",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "25"
                 },
                 "lowest": {
                     "year": "2025",
@@ -888,8 +726,7 @@
                     "day": "17",
                     "hour": "17",
                     "minute": "14",
-                    "second": "14",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "14"
                 },
                 "beamsplitter_time": 25
             },
@@ -911,8 +748,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -920,8 +756,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 25
             },
@@ -943,8 +778,7 @@
                     "day": "15",
                     "hour": "00",
                     "minute": "21",
-                    "second": "31",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "31"
                 },
                 "lowest": {
                     "year": "2025",
@@ -952,8 +786,7 @@
                     "day": "15",
                     "hour": "01",
                     "minute": "10",
-                    "second": "25",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "25"
                 },
                 "beamsplitter_time": 24
             },
@@ -975,8 +808,7 @@
                     "day": "17",
                     "hour": "19",
                     "minute": "25",
-                    "second": "09",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "09"
                 },
                 "lowest": {
                     "year": "2025",
@@ -984,8 +816,7 @@
                     "day": "17",
                     "hour": "20",
                     "minute": "44",
-                    "second": "36",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "36"
                 },
                 "beamsplitter_time": 25
             },
@@ -1007,8 +838,7 @@
                     "day": "14",
                     "hour": "20",
                     "minute": "59",
-                    "second": "07",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "07"
                 },
                 "lowest": {
                     "year": "2025",
@@ -1016,8 +846,7 @@
                     "day": "14",
                     "hour": "21",
                     "minute": "39",
-                    "second": "41",
-                    "filename_base": "RampBeamsplitterCorrelationsR"
+                    "second": "41"
                 },
                 "beamsplitter_time": 23
             }

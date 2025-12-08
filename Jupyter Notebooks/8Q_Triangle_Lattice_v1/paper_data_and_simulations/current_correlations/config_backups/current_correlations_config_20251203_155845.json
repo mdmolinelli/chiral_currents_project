@@ -2,150 +2,9 @@
     "coupling_point_1": {
         "phase": 1,
         "ratio": 2,
-        "coupling": {
-            "J_13": -6.85,
-            "J_24": -6.76,
-            "J_35": -7.17,
-            "J_46": -7.3,
-            "J_57": -7.08,
-            "J_68": -6.82,
-            "J_12": -5.82,
-            "J_23": -5.87,
-            "J_34": -5.53,
-            "J_45": -5.79,
-            "J_56": -5.55,
-            "J_67": -5.83,
-            "J_78": -5.85
-        },
+        "coupling": {},
         "simulation_config": {},
-        "data_config": {
-            "((1, 2), (3, 4))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((1, 2), (5, 6))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((1, 2), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((3, 4), (5, 6))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((3, 4), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((5, 6), (7, 8))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "16",
-                    "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "12-34-56-78"
-            },
-            "((2, 3), (4, 5))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((2, 3), (6, 7))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((4, 5), (6, 7))": {
-                "highest": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                },
-                "configuration": "1-23-45-67-8"
-            },
-            "((1, 2), (4, 5))": {
-                "configuration": "12-3-45-6-7-8"
-            },
-            "((2, 3), (5, 6))": {
-                "configuration": "1-23-4-56-7-8"
-            },
-            "((3, 4), (6, 7))": {
-                "configuration": "1-2-34-5-67-8"
-            },
-            "((4, 5), (7, 8))": {
-                "configuration": "1-2-3-45-6-78"
-            },
-            "((1, 2), (6, 7))": {
-                "configuration": "12-3-4-5-67-8"
-            },
-            "((2, 3), (7, 8))": {
-                "configuration": "1-23-4-5-6-78"
-            }
-        }
+        "data_config": {}
     },
     "coupling_point_2": {
         "simulation_config": {
@@ -529,7 +388,7 @@
     },
     "coupling_point_4": {
         "simulation_config": {
-            "num_levels": 3,
+            "num_levels": 4,
             "num_qubits": 8,
             "num_particles": 4,
             "U": 180,
@@ -537,7 +396,7 @@
             "T1": 40,
             "T2": 2,
             "time_start": 0,
-            "time_stop": 0.12,
+            "time_stop": 0.5,
             "time_num_points": 1001
         },
         "data_config": {
