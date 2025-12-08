@@ -532,7 +532,7 @@
             "num_levels": 3,
             "num_qubits": 8,
             "num_particles": 4,
-            "U": 180,
+            "U": -180,
             "psi0": -1,
             "T1": 40,
             "T2": 2,
