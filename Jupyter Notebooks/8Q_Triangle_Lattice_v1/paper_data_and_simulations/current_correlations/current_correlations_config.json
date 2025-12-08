@@ -537,7 +537,7 @@
             "T1": 40,
             "T2": 2,
             "time_start": 0,
-            "time_stop": 0.5,
+            "time_stop": 0.12,
             "time_num_points": 1001
         },
         "data_config": {
