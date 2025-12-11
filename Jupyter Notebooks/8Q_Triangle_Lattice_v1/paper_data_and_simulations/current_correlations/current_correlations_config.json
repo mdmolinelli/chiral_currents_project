@@ -1,7 +1,7 @@
 {
     "coupling_point_1": {
         "phase": 1,
-        "ratio": 2,
+        "ratio": 1,
         "coupling": {
             "J_13": -6.85,
             "J_24": -6.76,
@@ -149,7 +149,7 @@
     },
     "coupling_point_2": {
         "simulation_config": {
-            "num_levels": 3,
+            "num_levels": 5,
             "num_qubits": 8,
             "num_particles": 4,
             "U": -180,
@@ -529,7 +529,7 @@
     },
     "coupling_point_4": {
         "simulation_config": {
-            "num_levels": 3,
+            "num_levels": 5,
             "num_qubits": 8,
             "num_particles": 4,
             "U": -180,
@@ -538,7 +538,7 @@
             "T2": 2,
             "time_start": 0,
             "time_stop": 0.12,
-            "time_num_points": 1001
+            "time_num_points": 101
         },
         "data_config": {
             "((1, 2), (3, 4))": {

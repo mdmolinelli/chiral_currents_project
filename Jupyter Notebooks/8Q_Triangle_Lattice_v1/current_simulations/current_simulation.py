@@ -410,7 +410,13 @@ class CurrentSimulation:
         all_qubits = list(range(1, self.num_qubits+1))
         all_qubit_pairs = list(combinations(all_qubits, 2))
 
-        psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
+        if isinstance(psi0, qt.Qobj):
+            psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
+        elif isinstance(psi0, QuantumState):
+            psi0_fock = psi0
+        else:
+            raise TypeError(f'unspported type for psi0: {type(psi0)}')
+
         currents = {}
 
         # calculate currents
@@ -457,8 +463,16 @@ class CurrentSimulation:
         all_qubits = list(range(1, self.num_qubits+1))
         all_qubit_pairs = list(combinations(all_qubits, 2))
         
-        basis = self.get_basis()
-        psi0_fock = convert_reduced_to_fock_state(basis, psi0)
+        if isinstance(psi0, qt.Qobj):
+            psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
+        elif isinstance(psi0, QuantumState):
+            psi0_fock = psi0
+        else:
+            raise TypeError(f'unspported type for psi0: {type(psi0)}')
+
+
+        currents = self.get_currents()
+
         current_correlations = {}
 
         # define the leg current operator as j_j,m = −iJ(exp(iχ(−1)^m b†_j,m b_j+1,m − H.c.)
@@ -504,6 +518,8 @@ class CurrentSimulation:
                     value *= -1
 
                 current_correlations[((q_11, q_12),(q_21, q_22))] = value.real/2/np.pi/2/np.pi
+
+                current_correlations[((q_11, q_12),(q_21, q_22))] -= currents[q_11, q_12] * currents[q_21, q_22]
 
         self.current_correlations = current_correlations
 
@@ -753,6 +769,12 @@ def generate_triangle_ladder_single_particle_Hamiltonian(num_qubits=None, J_para
     if phase is None:
         phase = 0
 
+    if isinstance(J_parallel, (int, float)):
+        J_parallel = np.array([J_parallel] * (num_qubits - 2))
+
+    if isinstance(J_perp, (int, float)):
+        J_perp = np.array([J_perp] * (num_qubits - 1))
+
     if isinstance(phase, (int, float)):
         phase = np.array([phase] * (num_qubits - 2))
 
@@ -768,27 +790,27 @@ def generate_triangle_ladder_single_particle_Hamiltonian(num_qubits=None, J_para
         H[i, i] = detuning[i]
 
         if i < num_qubits - 1:
-            H[i, i + 1] = J_perp
-            H[i + 1, i] = np.conjugate(J_perp)
+            H[i, i + 1] = J_perp[i]
+            H[i + 1, i] = np.conjugate(J_perp[i])
 
         if i < num_qubits - 2:
             multiplier = -1
             if i % 2 == 1:
                 multiplier = 1
-            H[i, i + 2] = J_parallel * np.exp(-1j * multiplier * phase[i])
-            H[i + 2, i] = np.conjugate(J_parallel * np.exp(-1j * multiplier * phase[i]))
+            H[i, i + 2] = J_parallel[i] * np.exp(-1j * multiplier * phase[i])
+            H[i + 2, i] = np.conjugate(J_parallel[i] * np.exp(-1j * multiplier * phase[i]))
 
     if periodic:
         if num_qubits >= 4 and num_qubits % 2 == 0:
             # qubit 0 is coupled to qubit num_qubits - 1 and qubit num_qubits - 2
-            H[0, num_qubits - 1] = J_perp
-            H[num_qubits - 1, 0] = np.conjugate(J_perp)
+            H[0, num_qubits - 1] = J_perp[i]
+            H[num_qubits - 1, 0] = np.conjugate(J_perp[i])
             
-            H[0, num_qubits - 2] = J_parallel * np.exp(1j * phase[0])
-            H[num_qubits - 2, 0] = np.conjugate(J_parallel * np.exp(1j * phase[0]))
+            H[0, num_qubits - 2] = J_parallel[i] * np.exp(1j * phase[0])
+            H[num_qubits - 2, 0] = np.conjugate(J_parallel[i] * np.exp(1j * phase[0]))
 
-            H[1, num_qubits - 1] = J_parallel * np.exp(1j * phase[1])
-            H[num_qubits - 1, 1] = np.conjugate(J_parallel * np.exp(1j * phase[1]))
+            H[1, num_qubits - 1] = J_parallel[0] * np.exp(1j * phase[1])
+            H[num_qubits - 1, 1] = np.conjugate(J_parallel[0] * np.exp(1j * phase[1]))
         else:
             raise ValueError("Periodic boundary conditions only work for even number of qubits >= 4.")
 
