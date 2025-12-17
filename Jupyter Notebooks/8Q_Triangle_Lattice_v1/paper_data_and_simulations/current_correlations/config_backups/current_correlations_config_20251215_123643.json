@@ -58,8 +58,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((1, 2), (5, 6))": {
@@ -90,8 +89,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((1, 2), (7, 8))": {
@@ -122,8 +120,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((3, 4), (5, 6))": {
@@ -154,8 +151,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((3, 4), (7, 8))": {
@@ -186,8 +182,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((5, 6), (7, 8))": {
@@ -218,8 +213,7 @@
                     "day": "25",
                     "hour": "11",
                     "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "25"
                 }
             },
             "((2, 3), (4, 5))": {
@@ -243,10 +237,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((2, 3), (6, 7))": {
                 "highest": {
@@ -269,10 +260,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((4, 5), (6, 7))": {
                 "highest": {
@@ -295,10 +283,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 24,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 24
             },
             "((1, 2), (4, 5))": {
                 "configuration": "12-3-45-6-7-8",
@@ -328,8 +313,7 @@
                     "day": "02",
                     "hour": "12",
                     "minute": "13",
-                    "second": "10",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "10"
                 }
             },
             "((2, 3), (5, 6))": {
@@ -360,8 +344,7 @@
                     "day": "04",
                     "hour": "15",
                     "minute": "58",
-                    "second": "54",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "54"
                 }
             },
             "((3, 4), (6, 7))": {
@@ -392,8 +375,7 @@
                     "day": "05",
                     "hour": "22",
                     "minute": "04",
-                    "second": "41",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "21"
                 }
             },
             "((4, 5), (7, 8))": {
@@ -424,8 +406,7 @@
                     "day": "07",
                     "hour": "19",
                     "minute": "12",
-                    "second": "54",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "54"
                 }
             },
             "((1, 2), (6, 7))": {
@@ -456,8 +437,7 @@
                     "day": "04",
                     "hour": "21",
                     "minute": "09",
-                    "second": "03",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "03"
                 }
             },
             "((2, 3), (7, 8))": {
@@ -488,8 +468,7 @@
                     "day": "05",
                     "hour": "14",
                     "minute": "25",
-                    "second": "07",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "07"
                 }
             }
         }

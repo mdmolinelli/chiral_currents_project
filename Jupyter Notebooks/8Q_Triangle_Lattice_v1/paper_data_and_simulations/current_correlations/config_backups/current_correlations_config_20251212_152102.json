@@ -37,8 +37,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -51,16 +50,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((1, 2), (5, 6))": {
                 "highest": {
@@ -69,8 +59,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -83,16 +72,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 24,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((1, 2), (7, 8))": {
                 "highest": {
@@ -101,8 +81,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -115,16 +94,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 23,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 23
             },
             "((3, 4), (5, 6))": {
                 "highest": {
@@ -133,8 +103,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -147,16 +116,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((3, 4), (7, 8))": {
                 "highest": {
@@ -165,8 +125,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -179,16 +138,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 22,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((5, 6), (7, 8))": {
                 "highest": {
@@ -197,8 +147,7 @@
                     "day": "25",
                     "hour": "16",
                     "minute": "54",
-                    "second": "36",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "36"
                 },
                 "configuration": "12-34-56-78",
                 "measurement_detunings": [
@@ -211,16 +160,7 @@
                     1884.9555921538758,
                     1884.9555921538758
                 ],
-                "beamsplitter_time": 23,
-                "disordered": {
-                    "year": "2025",
-                    "month": "11",
-                    "day": "25",
-                    "hour": "11",
-                    "minute": "27",
-                    "second": "25",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 23
             },
             "((2, 3), (4, 5))": {
                 "highest": {
@@ -229,8 +169,7 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "30"
                 },
                 "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
@@ -243,10 +182,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((2, 3), (6, 7))": {
                 "highest": {
@@ -255,8 +191,7 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "30"
                 },
                 "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
@@ -269,10 +204,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 25
             },
             "((4, 5), (6, 7))": {
                 "highest": {
@@ -281,8 +213,7 @@
                     "day": "25",
                     "hour": "15",
                     "minute": "58",
-                    "second": "30",
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
+                    "second": "30"
                 },
                 "configuration": "1-23-45-67-8",
                 "measurement_detunings": [
@@ -295,10 +226,7 @@
                     2513.2741228718346,
                     -1742.3272856808994
                 ],
-                "beamsplitter_time": 24,
-                "disordered": {
-                    "filename_base": "RampDoubleJumpCurrentCorrelations"
-                }
+                "beamsplitter_time": 24
             },
             "((1, 2), (4, 5))": {
                 "configuration": "12-3-45-6-7-8",
@@ -318,19 +246,9 @@
                     "day": "02",
                     "hour": "16",
                     "minute": "58",
-                    "second": "15",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "15"
                 },
-                "beamsplitter_time": 26,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "02",
-                    "hour": "12",
-                    "minute": "13",
-                    "second": "10",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             },
             "((2, 3), (5, 6))": {
                 "configuration": "1-23-4-56-7-8",
@@ -350,19 +268,9 @@
                     "day": "04",
                     "hour": "16",
                     "minute": "13",
-                    "second": "18",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "18"
                 },
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "04",
-                    "hour": "15",
-                    "minute": "58",
-                    "second": "54",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             },
             "((3, 4), (6, 7))": {
                 "configuration": "1-2-34-5-67-8",
@@ -382,19 +290,9 @@
                     "day": "05",
                     "hour": "21",
                     "minute": "22",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "05",
-                    "hour": "22",
-                    "minute": "04",
-                    "second": "41",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             },
             "((4, 5), (7, 8))": {
                 "configuration": "1-2-3-45-6-78",
@@ -414,19 +312,9 @@
                     "day": "07",
                     "hour": "19",
                     "minute": "20",
-                    "second": "44",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "44"
                 },
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "07",
-                    "hour": "19",
-                    "minute": "12",
-                    "second": "54",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             },
             "((1, 2), (6, 7))": {
                 "configuration": "12-3-4-5-67-8",
@@ -446,19 +334,9 @@
                     "day": "04",
                     "hour": "22",
                     "minute": "58",
-                    "second": "09",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "09"
                 },
-                "beamsplitter_time": 25,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "04",
-                    "hour": "21",
-                    "minute": "09",
-                    "second": "03",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             },
             "((2, 3), (7, 8))": {
                 "configuration": "1-23-4-5-6-78",
@@ -478,19 +356,9 @@
                     "day": "05",
                     "hour": "14",
                     "minute": "40",
-                    "second": "46",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "46"
                 },
-                "beamsplitter_time": 17,
-                "disordered": {
-                    "year": "2025",
-                    "month": "12",
-                    "day": "05",
-                    "hour": "14",
-                    "minute": "25",
-                    "second": "07",
-                    "filename_base": "BSClean_Correlations"
-                }
+                "beamsplitter_time": 25
             }
         }
     },
