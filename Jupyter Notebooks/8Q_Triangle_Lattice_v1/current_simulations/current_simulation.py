@@ -1,4 +1,5 @@
 import math
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,7 +7,7 @@ from itertools import combinations, product
 import qutip as qt
 from scipy.optimize import curve_fit
 
-from quantum_states import QuantumState, FockBasisState
+from quantum_states import QuantumState, FockBasisState, DensityMatrix
 
 class CurrentSimulation:
     def __init__(self, num_levels, num_qubits, num_particles, J_parallel, J_perp, phase, U, detuning=None, periodic=False):
@@ -404,18 +405,34 @@ class CurrentSimulation:
                 
         self.current_correlations = current_correlations
 
-    def calculate_currents_fock(self, psi0):
+    def calculate_currents_fock(self, psi0, only_rungs=False, specific_pairs=[]):
         # current operator is iJ_ij(a_i^dagger a_j - a_j^dagger a_i)
 
         all_qubits = list(range(1, self.num_qubits+1))
         all_qubit_pairs = list(combinations(all_qubits, 2))
 
+        if specific_pairs is None or len(specific_pairs) == 0:
+            pass
+        else:
+            pairs = set()
+            for i in range(len(specific_pairs)):
+                pair = specific_pairs[i]
+                if isinstance(pair[0], (int, float)) and isinstance(pair[1], (int, float)):
+                    pairs.add((pair[0], pair[1]))
+                elif isinstance(pair[0], (list, tuple, np.ndarray)) and isinstance(pair[1], (list, tuple, np.ndarray)):
+                    pairs.add(pair[0])
+                    pairs.add(pair[1])
+
+            all_qubit_pairs = list(pairs)
+
+
+        # print(f'received type: {type(psi0)}')
         if isinstance(psi0, qt.Qobj):
             psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
-        elif isinstance(psi0, QuantumState):
+        elif isinstance(psi0, (QuantumState, DensityMatrix)):
             psi0_fock = psi0
         else:
-            raise TypeError(f'unspported type for psi0: {type(psi0)}')
+            raise TypeError(f'unsupported type for psi0: {type(psi0)}')
 
         currents = {}
 
@@ -428,6 +445,10 @@ class CurrentSimulation:
             
             q_1, q_2 = all_qubit_pairs[i]
 
+            if only_rungs:
+                # skip pairs that do not form a rung
+                if not abs(q_1 - q_2) == 1:
+                    continue
 
             # phase information stored in coupling in Hamiltonian matrix element
             coupling = self.get_single_particle_Hamiltonian()[q_1 - 1, q_2 - 1]
@@ -435,12 +456,24 @@ class CurrentSimulation:
                 continue
 
             value = 0
-            # a_i^dagger a_j term
-            new_state = psi0_fock.apply_raising_operator(q_1-1, self.num_levels).apply_lowering_operator(q_2-1)
-            value += psi0_fock.inner_product(new_state) * -1j * coupling
-            # a_j^dagger a_i term
-            new_state = psi0_fock.apply_lowering_operator(q_1-1).apply_raising_operator(q_2-1, self.num_levels)
-            value -= psi0_fock.inner_product(new_state) * -1j * np.conjugate(coupling)
+
+            if isinstance(psi0_fock, QuantumState):
+                # a_i^dagger a_j term
+                new_state = psi0_fock.apply_raising_operator(q_1-1, self.num_levels).apply_lowering_operator(q_2-1)
+                value += psi0_fock.inner_product(new_state) * -1j * coupling
+                # a_j^dagger a_i term
+                new_state = psi0_fock.apply_lowering_operator(q_1-1).apply_raising_operator(q_2-1, self.num_levels)
+                value -= psi0_fock.inner_product(new_state) * -1j * np.conjugate(coupling)
+
+            if isinstance(psi0_fock, DensityMatrix):
+                 # a_i^dagger a_j term
+                new_state = psi0_fock.apply_raising_operator(q_1-1, self.num_levels).apply_lowering_operator(q_2-1)
+                
+                value += new_state.trace() * -1j * coupling
+                # a_j^dagger a_i term
+                new_state = psi0_fock.apply_lowering_operator(q_1-1).apply_raising_operator(q_2-1, self.num_levels)
+                value -= new_state.trace() * -1j * np.conjugate(coupling)
+
 
             # for rung currents starting at top rung, (odd qubits) multiply by -1
             if abs(q_1 - q_2) == 1 and q_1 % 2 == 1:
@@ -452,7 +485,7 @@ class CurrentSimulation:
         self.currents = currents
 
 
-    def calculate_current_correlations_fock(self, psi0):
+    def calculate_current_correlations_fock(self, psi0, only_rungs=False, specific_pairs=[]):
         # calculate correlations
         # current operator is -J_ij(a_i^dagger a_j - a_j^dagger a_i)*J_kl(a_k^dagger a_l - a_l^dagger a_k)
 
@@ -462,16 +495,21 @@ class CurrentSimulation:
 
         all_qubits = list(range(1, self.num_qubits+1))
         all_qubit_pairs = list(combinations(all_qubits, 2))
+
+        if specific_pairs is None or len(specific_pairs) == 0:
+            correlation_pairs = list(product(all_qubit_pairs, repeat=2))
+        else:
+            correlation_pairs = specific_pairs
         
         if isinstance(psi0, qt.Qobj):
             psi0_fock = convert_reduced_to_fock_state(self.get_basis(), psi0)
-        elif isinstance(psi0, QuantumState):
+        elif isinstance(psi0, (QuantumState, DensityMatrix)):
             psi0_fock = psi0
         else:
-            raise TypeError(f'unspported type for psi0: {type(psi0)}')
+            raise TypeError(f'unsupported type for psi0: {type(psi0)}')
 
 
-        currents = self.get_currents()
+        currents = self.get_currents(only_rungs=only_rungs, specific_pairs=specific_pairs)
 
         current_correlations = {}
 
@@ -479,22 +517,35 @@ class CurrentSimulation:
         # let's define the phase through each plaquette as chi. Let's put all the phase in the J_parallel coupling, so rung coupling is the same but with chi = 0
         # for example, for a right side up plaquette, j_j,1 = −iJ(exp(-iχ b†_j,1 b_j+1,1 − H.c.)
         # for example, for a upside down plaquette, j_j,2 = −iJ(exp(iχ b†_j,2 b_j+1,2 − H.c.)
-        for i in range(len(all_qubit_pairs)):
-            q_11, q_12 = all_qubit_pairs[i]
+
+        for i in range(len(correlation_pairs)):
+            correlation_pair = correlation_pairs[i]
+            q_11, q_12 = correlation_pair[0]
+            q_21, q_22 = correlation_pair[1]     
+
             # phase information stored in coupling in Hamiltonian matrix element
             coupling_1 = self.get_single_particle_Hamiltonian()[q_11 - 1, q_12 - 1]
-            # print(q_11, q_12)
-            
-            for j in range(i+1, len(all_qubit_pairs)):
-                q_21, q_22 = all_qubit_pairs[j]        
-                # phase information stored in coupling in Hamiltonian matrix element
-                coupling_2 = self.get_single_particle_Hamiltonian()[q_21 - 1, q_22 - 1]
+            coupling_2 = self.get_single_particle_Hamiltonian()[q_21 - 1, q_22 - 1]
 
-                if coupling_1 == 0 or coupling_2 == 0:
+            if coupling_1 == 0 or coupling_2 == 0:
+                continue
+
+            if only_rungs:
+                # skip pairs that do not form a rung
+                if not abs(q_11 - q_12) == 1:
+                    continue
+                if not abs(q_21 - q_22) == 1:
                     continue
 
+                # skip pairs that share a vertex with this pair
+                if q_11 in correlation_pair[1] or q_12 in correlation_pair[1]:
+                    continue
+                
 
-                value = 0
+            # print(f'Calculating correlation between ({q_11}, {q_12}) and ({q_21}, {q_22})')
+
+            value = 0
+            if isinstance(psi0_fock, QuantumState):
                 # a_i^dagger a_j a_k^dagger a_l
                 new_state = psi0_fock.apply_raising_operator(q_11-1, self.num_levels).apply_lowering_operator(q_12-1).apply_raising_operator(q_21-1, self.num_levels).apply_lowering_operator(q_22-1)
                 value -= psi0_fock.inner_product(new_state) * coupling_1 * coupling_2
@@ -511,15 +562,36 @@ class CurrentSimulation:
                 new_state = psi0_fock.apply_raising_operator(q_12-1, self.num_levels).apply_lowering_operator(q_11-1).apply_raising_operator(q_22-1, self.num_levels).apply_lowering_operator(q_21-1)
                 value -= psi0_fock.inner_product(new_state) * np.conjugate(coupling_1) * np.conjugate(coupling_2)
 
-                # for rung currents starting at top rung, (odd qubits) multiply by -1
-                if abs(q_11 - q_12) == 1 and q_11 % 2 == 1:
-                    value *= -1
-                if abs(q_21 - q_22) == 1 and q_21 % 2 == 1:
-                    value *= -1
+            if isinstance(psi0_fock, DensityMatrix):
+                # print('working on first term')
+                # a_i^dagger a_j a_k^dagger a_l
+                new_state = psi0_fock.apply_raising_operator(q_11-1, self.num_levels).apply_lowering_operator(q_12-1).apply_raising_operator(q_21-1, self.num_levels).apply_lowering_operator(q_22-1)
+                value -= new_state.trace() * coupling_1 * coupling_2
 
-                current_correlations[((q_11, q_12),(q_21, q_22))] = value.real/2/np.pi/2/np.pi
+                # print('first term done')
+                # a_i^dagger a_j a_l^dagger a_k
+                new_state = psi0_fock.apply_raising_operator(q_11-1, self.num_levels).apply_lowering_operator(q_12-1).apply_raising_operator(q_22-1, self.num_levels).apply_lowering_operator(q_21-1)
+                value += new_state.trace() * coupling_1 * np.conjugate(coupling_2)
 
-                current_correlations[((q_11, q_12),(q_21, q_22))] -= currents[q_11, q_12] * currents[q_21, q_22]
+                # a_j^dagger a_i a_k^dagger a_l
+                new_state = psi0_fock.apply_raising_operator(q_12-1, self.num_levels).apply_lowering_operator(q_11-1).apply_raising_operator(q_21-1, self.num_levels).apply_lowering_operator(q_22-1)
+                value += new_state.trace() * np.conjugate(coupling_1) * coupling_2 
+
+                # a_j^dagger a_i a_l^dagger a_k
+                new_state = psi0_fock.apply_raising_operator(q_12-1, self.num_levels).apply_lowering_operator(q_11-1).apply_raising_operator(q_22-1, self.num_levels).apply_lowering_operator(q_21-1)
+                value -= new_state.trace() * np.conjugate(coupling_1) * np.conjugate(coupling_2)
+
+
+
+            # for rung currents starting at top rung, (odd qubits) multiply by -1
+            if abs(q_11 - q_12) == 1 and q_11 % 2 == 1:
+                value *= -1
+            if abs(q_21 - q_22) == 1 and q_21 % 2 == 1:
+                value *= -1
+
+            current_correlations[((q_11, q_12),(q_21, q_22))] = value.real/2/np.pi/2/np.pi
+
+            current_correlations[((q_11, q_12),(q_21, q_22))] -= currents[q_11, q_12] * currents[q_21, q_22]
 
         self.current_correlations = current_correlations
 
@@ -559,12 +631,12 @@ class CurrentSimulation:
         self.bond_order_values = bond_order_values
 
 
-    def get_currents(self):
-        self.calculate_currents_fock(self.psi0)
+    def get_currents(self, **kwargs):
+        self.calculate_currents_fock(self.psi0, **kwargs)
         return self.currents
 
-    def get_current_correlations(self):
-        self.calculate_current_correlations_fock(self.psi0)
+    def get_current_correlations(self, only_rungs=False, **kwargs):
+        self.calculate_current_correlations_fock(self.psi0, only_rungs=only_rungs, **kwargs)
         return self.current_correlations
 
     def get_bond_order_values(self):
