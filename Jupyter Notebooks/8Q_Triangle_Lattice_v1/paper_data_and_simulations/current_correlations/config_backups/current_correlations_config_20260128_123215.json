@@ -2002,8 +2002,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             },
@@ -2034,11 +2033,9 @@
                     "day": "20",
                     "hour": "15",
                     "minute": "49",
-                    "second": "00",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "00"
                 },
-                "beamsplitter_time": 25,
-                "beamsplitter_fit": "disordered_2"
+                "beamsplitter_time": 25
             },
             "((1, 2), (5, 6))": {
                 "measurement_detunings": [
@@ -2067,8 +2064,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             },
@@ -2099,8 +2095,7 @@
                     "day": "23",
                     "hour": "00",
                     "minute": "38",
-                    "second": "22",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "22"
                 },
                 "beamsplitter_time": 25
             },
@@ -2131,8 +2126,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             },
@@ -2163,11 +2157,9 @@
                     "day": "23",
                     "hour": "02",
                     "minute": "33",
-                    "second": "59",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "59"
                 },
-                "beamsplitter_time": 25,
-                "beamsplitter_fit": "disordered_2"
+                "beamsplitter_time": 25
             },
             "((2, 3), (5, 6))": {
                 "measurement_detunings": [
@@ -2196,11 +2188,9 @@
                     "day": "23",
                     "hour": "04",
                     "minute": "29",
-                    "second": "02",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "02"
                 },
-                "beamsplitter_time": 25,
-                "beamsplitter_fit": "disordered_2"
+                "beamsplitter_time": 25
             },
             "((2, 3), (6, 7))": {
                 "measurement_detunings": [
@@ -2229,11 +2219,9 @@
                     "day": "23",
                     "hour": "02",
                     "minute": "33",
-                    "second": "59",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "59"
                 },
-                "beamsplitter_time": 25,
-                "beamsplitter_fit": "disordered_2"
+                "beamsplitter_time": 25
             },
             "((2, 3), (7, 8))": {
                 "measurement_detunings": [
@@ -2262,11 +2250,9 @@
                     "day": "23",
                     "hour": "06",
                     "minute": "24",
-                    "second": "09",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "09"
                 },
-                "beamsplitter_time": 25,
-                "beamsplitter_fit": "disordered_2"
+                "beamsplitter_time": 25
             },
             "((3, 4), (5, 6))": {
                 "measurement_detunings": [
@@ -2295,8 +2281,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             },
@@ -2327,8 +2312,7 @@
                     "day": "24",
                     "hour": "16",
                     "minute": "36",
-                    "second": "27",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "27"
                 },
                 "beamsplitter_time": 25
             },
@@ -2359,8 +2343,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             },
@@ -2391,8 +2374,7 @@
                     "day": "23",
                     "hour": "02",
                     "minute": "33",
-                    "second": "59",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "59"
                 },
                 "beamsplitter_time": 25
             },
@@ -2423,8 +2405,7 @@
                     "day": "23",
                     "hour": "18",
                     "minute": "21",
-                    "second": "47",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "47"
                 },
                 "beamsplitter_time": 25
             },
@@ -2455,8 +2436,7 @@
                     "day": "22",
                     "hour": "17",
                     "minute": "43",
-                    "second": "40",
-                    "filename_base": "BSClean_Correlations"
+                    "second": "40"
                 },
                 "beamsplitter_time": 25
             }
