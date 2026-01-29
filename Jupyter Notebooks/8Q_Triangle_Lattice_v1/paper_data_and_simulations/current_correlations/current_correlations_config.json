@@ -2005,7 +2005,9 @@
                     "second": "40",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
+
             },
             "((1, 2), (4, 5))": {
                 "measurement_detunings": [
@@ -2070,7 +2072,8 @@
                     "second": "40",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
             },
             "((1, 2), (6, 7))": {
                 "measurement_detunings": [
@@ -2298,7 +2301,8 @@
                     "second": "40",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
             },
             "((3, 4), (6, 7))": {
                 "measurement_detunings": [
@@ -2330,7 +2334,8 @@
                     "second": "27",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
             },
             "((3, 4), (7, 8))": {
                 "measurement_detunings": [
@@ -2362,7 +2367,8 @@
                     "second": "40",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
             },
             "((4, 5), (6, 7))": {
                 "measurement_detunings": [
@@ -2458,7 +2464,8 @@
                     "second": "40",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25
+                "beamsplitter_time": 25,
+                "beamsplitter_fit": "coupling"
             }
         },
         "coupling": {
