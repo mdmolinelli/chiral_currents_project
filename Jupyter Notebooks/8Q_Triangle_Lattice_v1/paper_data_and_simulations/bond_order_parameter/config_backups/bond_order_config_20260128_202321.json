@@ -362,21 +362,6 @@
                     -628.3185307179587,
                     1884.9555921538758,
                     1884.9555921538758
-                ],
-                "highest": {
-                    "year": "2026",
-                    "month": "01",
-                    "day": "26",
-                    "hour": "22",
-                    "minute": "34",
-                    "second": "54",
-                    "filename_base": "BSClean_Correlations"
-                },
-                "parity": [
-                    -1,
-                    -1,
-                    -1,
-                    -1
                 ]
             },
             "1-23-45-67-8": {
@@ -389,34 +374,8 @@
                     1918.2564742819277,
                     1884.9555921538758,
                     -1885.583910684594
-                ],
-                "highest": {
-                    "year": "2026",
-                    "month": "01",
-                    "day": "27",
-                    "hour": "14",
-                    "minute": "54",
-                    "second": "46",
-                    "filename_base": "BSClean_Correlations"
-                },
-                "parity": [
-                    1,
-                    1,
-                    -1
                 ]
             }
-        },
-        "simulation_config": {
-            "num_levels": 5,
-            "num_qubits": 8,
-            "num_particles": 4,
-            "U": -180,
-            "psi0": -1,
-            "T1": 40,
-            "T2": 2,
-            "time_start": 0,
-            "time_stop": 0.16,
-            "time_num_points": 201
         }
     }
 }

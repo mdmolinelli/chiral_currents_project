@@ -373,10 +373,10 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    -1,
-                    -1,
-                    -1,
-                    -1
+                    1,
+                    1,
+                    1,
+                    1
                 ]
             },
             "1-23-45-67-8": {
@@ -402,21 +402,9 @@
                 "parity": [
                     1,
                     1,
-                    -1
+                    1
                 ]
             }
-        },
-        "simulation_config": {
-            "num_levels": 5,
-            "num_qubits": 8,
-            "num_particles": 4,
-            "U": -180,
-            "psi0": -1,
-            "T1": 40,
-            "T2": 2,
-            "time_start": 0,
-            "time_stop": 0.16,
-            "time_num_points": 201
         }
     }
 }
