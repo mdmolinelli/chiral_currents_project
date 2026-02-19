@@ -20,6 +20,7 @@ class PopulationShotsBase:
         self.population_average = None
         self.population_corrected = None
         self.population_corrected_post_selected = None
+        self.population_post_selected = None
 
         self.counts = None
         self.counts_corrected = None
@@ -80,6 +81,19 @@ class PopulationShotsBase:
                         population_average[i, :] += probabilities[outcome_idx, :]
             self.population_corrected_post_selected = population_average
         return self.population_corrected_post_selected
+    
+    def get_population_post_selected(self):
+        if self.population_post_selected is None:
+            basis = list(product(range(2), repeat=self.get_num_qubits()))
+            counts = self.get_counts_post_selected()
+            probabilities = counts / np.sum(counts, axis=0, keepdims=True)
+            population_average = np.zeros((self.get_num_qubits(), probabilities.shape[-1]))
+            for i in range(self.get_num_qubits()):
+                for outcome_idx, outcome in enumerate(basis):
+                    if outcome[i] == 1:
+                        population_average[i, :] += probabilities[outcome_idx, :]
+            self.population_post_selected = population_average
+        return self.population_post_selected
 
     def get_confusion_matrices(self):
         if self.confusion_matrices is None:
