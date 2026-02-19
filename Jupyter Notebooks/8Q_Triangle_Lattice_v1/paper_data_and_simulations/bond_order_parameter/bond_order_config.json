@@ -68,7 +68,9 @@
                     1,
                     -1
                 ]
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "simulation_config": {
             "num_levels": 5,
@@ -152,7 +154,9 @@
                     1,
                     -1
                 ]
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "simulation_config": {
             "num_levels": 5,
@@ -236,7 +240,9 @@
                     -1,
                     1
                 ]
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "simulation_config": {
             "num_levels": 5,
@@ -320,7 +326,9 @@
                     -1,
                     -1
                 ]
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "simulation_config": {
             "num_levels": 5,
@@ -404,7 +412,95 @@
                     1,
                     -1
                 ]
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": false
+        },
+        "simulation_config": {
+            "num_levels": 5,
+            "num_qubits": 8,
+            "num_particles": 4,
+            "U": -180,
+            "psi0": -1,
+            "T1": 40,
+            "T2": 2,
+            "time_start": 0,
+            "time_stop": 0.16,
+            "time_num_points": 201
+        }
+    },
+    "coupling_point_6": {
+        "coupling": {
+            "J_13": 17.31,
+            "J_24": 17.49,
+            "J_35": 17.48,
+            "J_46": 17.49,
+            "J_57": 17.38,
+            "J_68": 17.33,
+            "J_12": -5.21,
+            "J_23": -5.34,
+            "J_34": -4.51,
+            "J_45": -4.71,
+            "J_56": -4.47,
+            "J_67": -5.05,
+            "J_78": -5.25
+        },
+        "data_config": {
+            "12-34-56-78": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "highest": {
+                    "year": "2026",
+                    "month": "02",
+                    "day": "13",
+                    "hour": "18",
+                    "minute": "47",
+                    "second": "42",
+                    "filename_base": "BSClean_Correlations"
+                },
+                "parity": [
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
+            },
+            "1-23-45-67-8": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -1884.9555921538758,
+                    -1884.9555921538758,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1256.6370614359173
+                ],
+                "highest": {
+                    "year": "2026",
+                    "month": "02",
+                    "day": "13",
+                    "hour": "19",
+                    "minute": "39",
+                    "second": "55",
+                    "filename_base": "BSClean_Correlations"
+                },
+                "parity": [
+                    1,
+                    -1,
+                    -1
+                ]
+            },
+            "post_select": true,
+            "confusion_matrix_correct": false
         },
         "simulation_config": {
             "num_levels": 5,

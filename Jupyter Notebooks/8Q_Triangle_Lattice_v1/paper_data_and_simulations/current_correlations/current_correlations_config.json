@@ -17,6 +17,21 @@
             "J_67": -5.83,
             "J_78": -5.85
         },
+        "coupling_error": {
+            "J_13": 0.02,
+            "J_24": 0.01,
+            "J_35": 0.02,
+            "J_46": 0.01,
+            "J_57": 0.01,
+            "J_68": 0.01,
+            "J_12": 0.02,
+            "J_23": 0.02,
+            "J_34": 0.02,
+            "J_45": 0.03,
+            "J_56": 0.01,
+            "J_67": 0.03,
+            "J_78": 0.01
+        },
         "simulation_config": {
             "num_levels": 5,
             "num_qubits": 8,
@@ -450,7 +465,8 @@
                     "second": "09",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_time": 25,
+                "beamsplitter_fit": "manual",
+                "beamsplitter_time": 27,
                 "disordered": {
                     "year": "2025",
                     "month": "12",
@@ -492,7 +508,9 @@
                     "second": "07",
                     "filename_base": "BSClean_Correlations"
                 }
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "T2s": {
             "T2_1": 1.044,
@@ -864,7 +882,9 @@
                     "second": "24",
                     "filename_base": "RampBeamsplitterCorrelationsR"
                 }
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "coupling": {
             "J_13": -11.99,
@@ -1084,24 +1104,24 @@
                 "configuration": "1-23-45-67-8",
                 "highest": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "58",
-                    "second": "19",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "11",
+                    "minute": "55",
+                    "second": "45",
                     "filename_base": "BSClean_Correlations"
                 },
                 "disordered": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "49",
-                    "second": "53",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "10",
+                    "minute": "08",
+                    "second": "29",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_fit": "highest_1",
-                "beamsplitter_time": 25
+                "beamsplitter_fit": "manual",
+                "beamsplitter_time": 19
             },
             "((2, 3), (5, 6))": {
                 "measurement_detunings": [
@@ -1149,24 +1169,24 @@
                 "configuration": "1-23-45-67-8",
                 "highest": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "58",
-                    "second": "19",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "11",
+                    "minute": "55",
+                    "second": "45",
                     "filename_base": "BSClean_Correlations"
                 },
                 "disordered": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "49",
-                    "second": "53",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "10",
+                    "minute": "08",
+                    "second": "29",
                     "filename_base": "BSClean_Correlations"
                 },
-                "beamsplitter_fit": "highest",
-                "beamsplitter_time": 25
+                "beamsplitter_fit": "manual",
+                "beamsplitter_time": 19
             },
             "((2, 3), (7, 8))": {
                 "measurement_detunings": [
@@ -1311,20 +1331,20 @@
                 "configuration": "1-23-45-67-8",
                 "highest": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "58",
-                    "second": "19",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "11",
+                    "minute": "55",
+                    "second": "45",
                     "filename_base": "BSClean_Correlations"
                 },
                 "disordered": {
                     "year": "2026",
-                    "month": "01",
-                    "day": "12",
-                    "hour": "07",
-                    "minute": "49",
-                    "second": "53",
+                    "month": "02",
+                    "day": "17",
+                    "hour": "10",
+                    "minute": "08",
+                    "second": "29",
                     "filename_base": "BSClean_Correlations"
                 },
                 "beamsplitter_fit": "disordered_2",
@@ -1395,7 +1415,9 @@
                 },
                 "beamsplitter_fit": "highest",
                 "beamsplitter_time": 23
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "coupling": {
             "J_13": -17.31,
@@ -1932,7 +1954,9 @@
                     "filename_base": "RampBeamsplitterCorrelationsR"
                 },
                 "beamsplitter_time": 23
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": true
         },
         "coupling": {
             "J_13": 6.21,
@@ -2007,7 +2031,6 @@
                 },
                 "beamsplitter_time": 25,
                 "beamsplitter_fit": "coupling"
-
             },
             "((1, 2), (4, 5))": {
                 "measurement_detunings": [
@@ -2466,7 +2489,9 @@
                 },
                 "beamsplitter_time": 25,
                 "beamsplitter_fit": "coupling"
-            }
+            },
+            "post_select": true,
+            "confusion_matrix_correct": false
         },
         "coupling": {
             "J_13": 13.41,
@@ -2510,7 +2535,362 @@
         }
     },
     "coupling_point_6": {
-        "simulation_config": {},
-        "data_config": {}
+        "simulation_config": {
+            "num_levels": 5,
+            "num_qubits": 8,
+            "num_particles": 4,
+            "U": -180,
+            "psi0": -1,
+            "T1": 40,
+            "T2": 2,
+            "time_start": 0,
+            "time_stop": 0.16,
+            "time_num_points": 201,
+            "ramp_time": 0.29
+        },
+        "data_config": {
+            "((1, 2), (3, 4))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (4, 5))": {
+                "measurement_detunings": [
+                    628.3185307179587,
+                    628.3185307179587,
+                    1570.7963267948965,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    1256.6370614359173,
+                    1256.6370614359173,
+                    1256.6370614359173
+                ],
+                "configuration": "12-3-45-6-7-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_14_29_20_1245_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (5, 6))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (6, 7))": {
+                "measurement_detunings": [
+                    -628.3185307179587,
+                    -628.3185307179587,
+                    -2208.5396354736245,
+                    -1950.3007193485435,
+                    -1979.2033717615698,
+                    1256.6370614359173,
+                    1256.6370614359173,
+                    -1906.3184221982863
+                ],
+                "configuration": "12-3-4-5-67-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_15_51_56_1267_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((1, 2), (7, 8))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (4, 5))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -1884.9555921538758,
+                    -1884.9555921538758,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1256.6370614359173
+                ],
+                "configuration": "1-23-45-67-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_17_14_33_2345_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (5, 6))": {
+                "measurement_detunings": [
+                    -1824.008694674234,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -471.23889803846896,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    942.4777960769379,
+                    942.4777960769379
+                ],
+                "configuration": "1-23-4-56-7-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_18_37_12_2356_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (6, 7))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -1884.9555921538758,
+                    -1884.9555921538758,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1256.6370614359173
+                ],
+                "configuration": "1-23-45-67-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_17_14_33_2345_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((2, 3), (7, 8))": {
+                "measurement_detunings": [
+                    -1824.008694674234,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -1950.3007193485435,
+                    -1979.2033717615698,
+                    -1963.4954084936207,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "1-23-4-5-6-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_19_59_55_2378_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((3, 4), (5, 6))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((3, 4), (6, 7))": {
+                "measurement_detunings": [
+                    -1824.008694674234,
+                    -1895.6370071760812,
+                    -628.3185307179587,
+                    -628.3185307179587,
+                    -1979.2033717615698,
+                    1256.6370614359173,
+                    1256.6370614359173,
+                    -1906.3184221982863
+                ],
+                "configuration": "1-2-34-5-67-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_21_22_35_3467_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((3, 4), (7, 8))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((4, 5), (6, 7))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    628.3185307179587,
+                    628.3185307179587,
+                    -1884.9555921538758,
+                    -1884.9555921538758,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1256.6370614359173
+                ],
+                "configuration": "1-23-45-67-8",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_17_14_33_2345_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((4, 5), (7, 8))": {
+                "measurement_detunings": [
+                    942.4777960769379,
+                    942.4777960769379,
+                    942.4777960769379,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    -157.07963267948966,
+                    628.3185307179587,
+                    628.3185307179587
+                ],
+                "configuration": "1-2-3-45-6-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_22_45_19_4578_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "((5, 6), (7, 8))": {
+                "measurement_detunings": [
+                    -1256.6370614359173,
+                    -1256.6370614359173,
+                    314.1592653589793,
+                    314.1592653589793,
+                    -1570.7963267948965,
+                    -1570.7963267948965,
+                    0.0,
+                    0.0
+                ],
+                "configuration": "12-34-56-78",
+                "disordered": {
+                    "filename_base": "BSClean_Correlations"
+                },
+                "highest": {
+                    "filename": "V:\\QSimMeasurements\\Measurements\\8QV1_Triangle_Lattice\\BSClean_Correlations\\BSClean_Correlations_2026_02_14\\BSClean_Correlations_2026_02_14_13_06_44_1234_correlations_0.h5"
+                },
+                "beamsplitter_time": 25
+            },
+            "post_select": true,
+            "confusion_matrix_correct": false
+        },
+        "coupling": {
+            "J_13": 17.31,
+            "J_24": 17.49,
+            "J_35": 17.48,
+            "J_46": 17.49,
+            "J_57": 17.38,
+            "J_68": 17.33,
+            "J_12": -5.21,
+            "J_23": -5.34,
+            "J_34": -4.51,
+            "J_45": -4.71,
+            "J_56": -4.47,
+            "J_67": -5.05,
+            "J_78": -5.25
+        },
+        "coupling_error": {
+            "J_13": 0.04,
+            "J_24": 0.07,
+            "J_35": 0.05,
+            "J_46": 0.17,
+            "J_57": 0.04,
+            "J_68": 0.1,
+            "J_12": 0.05,
+            "J_23": 0.33,
+            "J_34": 0.14,
+            "J_45": 0.03,
+            "J_56": 0.04,
+            "J_67": 0.03,
+            "J_78": 0.04
+        },
+        "T2s": {
+            "T2_1": 1.467,
+            "T2_2": 0.535,
+            "T2_3": 1.543,
+            "T2_4": 0.422,
+            "T2_5": 2.396,
+            "T2_6": 2.036,
+            "T2_7": 1.371,
+            "T2_8": 1.621
+        }
     }
 }
