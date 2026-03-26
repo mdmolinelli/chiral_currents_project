@@ -13,7 +13,9 @@
             "J_45": -5.79,
             "J_56": -5.55,
             "J_67": -5.83,
-            "J_78": -5.85
+            "J_78": -5.85,
+            "average_rung_coupling": -5.748571428571429,
+            "average_leg_coupling": -6.996666666666667
         },
         "data_config": {
             "12-34-56-78": {
@@ -82,7 +84,7 @@
             "T2": 2,
             "time_start": 0,
             "time_stop": 0.12,
-            "time_num_points": 101
+            "time_num_points": 201
         }
     },
     "coupling_point_2": {
@@ -99,7 +101,9 @@
             "J_45": -5.95,
             "J_56": -5.42,
             "J_67": -6.26,
-            "J_78": -6.35
+            "J_78": -6.35,
+            "average_rung_coupling": -6.048571428571428,
+            "average_leg_coupling": -12.214999999999998
         },
         "data_config": {
             "12-34-56-78": {
@@ -168,7 +172,7 @@
             "T2": 2,
             "time_start": 0,
             "time_stop": 0.12,
-            "time_num_points": 101
+            "time_num_points": 201
         }
     },
     "coupling_point_4": {
@@ -185,7 +189,9 @@
             "J_45": -6.56,
             "J_56": -6.36,
             "J_67": -6.53,
-            "J_78": -6.3
+            "J_78": -6.3,
+            "average_rung_coupling": -6.4157142857142855,
+            "average_leg_coupling": 6.260000000000001
         },
         "data_config": {
             "12-34-56-78": {
@@ -254,7 +260,7 @@
             "T2": 2,
             "time_start": 0,
             "time_stop": 0.12,
-            "time_num_points": 101
+            "time_num_points": 201
         }
     },
     "coupling_point_3": {
@@ -271,7 +277,9 @@
             "J_45": -4.71,
             "J_56": -4.47,
             "J_67": -5.05,
-            "J_78": -5.25
+            "J_78": -5.25,
+            "average_rung_coupling": -4.888571428571429,
+            "average_leg_coupling": -17.41333333333333
         },
         "data_config": {
             "12-34-56-78": {
@@ -298,7 +306,7 @@
                     1,
                     1,
                     1,
-                    -1
+                    1
                 ]
             },
             "1-23-45-67-8": {
@@ -324,7 +332,7 @@
                 "parity": [
                     1,
                     -1,
-                    -1
+                    1
                 ]
             },
             "post_select": true,
@@ -357,7 +365,9 @@
             "J_45": -6.78,
             "J_56": -6.59,
             "J_67": -6.74,
-            "J_78": -6.39
+            "J_78": -6.39,
+            "average_rung_coupling": -6.61,
+            "average_leg_coupling": 12.979999999999999
         },
         "data_config": {
             "12-34-56-78": {
@@ -443,7 +453,9 @@
             "J_45": -4.71,
             "J_56": -4.47,
             "J_67": -5.05,
-            "J_78": -5.25
+            "J_78": -5.25,
+            "average_rung_coupling": -4.934285714285714,
+            "average_leg_coupling": 17.41333333333333
         },
         "data_config": {
             "12-34-56-78": {
@@ -529,7 +541,9 @@
             "J_45": -8.97,
             "J_56": -9.57,
             "J_67": -8.49,
-            "J_78": -8.25
+            "J_78": -8.25,
+            "average_rung_coupling": -8.615714285714287,
+            "average_leg_coupling": 24.583333333333332
         },
         "data_config": {
             "12-34-56-78": {
@@ -553,9 +567,9 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    1,
-                    1,
-                    1,
+                    -1,
+                    -1,
+                    -1,
                     1
                 ]
             },
@@ -580,7 +594,7 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    1,
+                    -1,
                     1,
                     1
                 ]
@@ -613,7 +627,9 @@
             "J_45": -8.27,
             "J_56": -8.38,
             "J_67": -8.04,
-            "J_78": -7.67
+            "J_78": -7.67,
+            "average_rung_coupling": -7.9871428571428575,
+            "average_leg_coupling": 16.31
         },
         "data_config": {
             "12-34-56-78": {
@@ -637,9 +653,9 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    1,
-                    1,
-                    1,
+                    -1,
+                    -1,
+                    -1,
                     1
                 ]
             },
@@ -664,7 +680,7 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    1,
+                    -1,
                     1,
                     1
                 ]
@@ -697,7 +713,9 @@
             "J_45": -5.95,
             "J_56": -5.42,
             "J_67": -6.26,
-            "J_78": -6.35
+            "J_78": -6.35,
+            "average_rung_coupling": -6.048571428571428,
+            "average_leg_coupling": -12.214999999999998
         },
         "data_config": {
             "12-34-56-78": {
@@ -723,7 +741,7 @@
                 "parity": [
                     1,
                     1,
-                    1,
+                    -1,
                     1
                 ]
             },
@@ -748,9 +766,9 @@
                     "filename_base": "BSClean_Correlations"
                 },
                 "parity": [
-                    1,
-                    1,
-                    1
+                    -1,
+                    -1,
+                    -1
                 ]
             }
         },
@@ -764,7 +782,18 @@
             "T2": 2,
             "time_start": 0,
             "time_stop": 0.16,
-            "time_num_points": 201
+            "time_num_points": 201,
+            "ramp_time": 0.29
+        },
+        "T2s": {
+            "T2_1": 2.085,
+            "T2_2": 0.581,
+            "T2_3": 1.976,
+            "T2_4": 0.366,
+            "T2_5": 2.119,
+            "T2_6": 2.005,
+            "T2_7": 1.727,
+            "T2_8": 1.792
         }
     }
 }
